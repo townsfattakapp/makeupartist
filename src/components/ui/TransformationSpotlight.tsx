@@ -4,18 +4,18 @@ import { BeforeAfterSlider } from './BeforeAfterSlider';
 
 export function TransformationSpotlight() {
   return (
-    <section className="py-24 bg-[var(--background-subtle)] border-y border-[var(--border)] overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 space-y-16">
+    <section className="py-14 sm:py-24 bg-[var(--background-subtle)] border-y border-[var(--border)] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10 sm:space-y-16">
         {/* Top Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="text-xs tracking-ultra-wide uppercase font-semibold text-[var(--accent)] flex items-center justify-center space-x-1.5">
+          <span className="text-[11px] sm:text-xs tracking-ultra-wide uppercase font-semibold text-[var(--accent)] flex items-center justify-center space-x-1.5">
             <Sparkles className="w-3.5 h-3.5" />
             <span>The Power of Bespoke Artistry</span>
           </span>
-          <h2 className="font-serif text-3xl sm:text-5xl text-[var(--foreground)] leading-tight">
+          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-[var(--foreground)] leading-tight">
             The Transformation Spotlight
           </h2>
-          <p className="text-sm text-[var(--muted)] leading-relaxed">
+          <p className="text-xs sm:text-sm text-[var(--muted)] leading-relaxed">
             Drag the interactive slider below to inspect how classical color correction and sub-dermal botanical hydration awaken the face without a heavy mask of foundation.
           </p>
         </div>
@@ -87,15 +87,15 @@ export function TransformationSpotlight() {
         </div>
 
         {/* PROPERLY CENTERED CALL TO ACTION */}
-        <div className="pt-4 flex flex-col items-center justify-center text-center space-y-3">
+        <div className="pt-2 sm:pt-4 flex flex-col items-center justify-center text-center space-y-3 w-full max-w-md mx-auto">
           <Link
             href="/enquire"
-            className="inline-flex items-center justify-center space-x-2.5 px-8 py-3.5 rounded-full bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--accent)] hover:text-black text-xs tracking-luxury uppercase font-semibold transition-all shadow-md hover:shadow-xl group"
+            className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 px-6 sm:px-8 py-3.5 rounded-full bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--accent)] hover:text-black text-xs tracking-luxury uppercase font-semibold transition-all shadow-md hover:shadow-xl group"
           >
             <span>Reserve Your Transformation</span>
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
-          <p className="text-[11px] tracking-wide text-[var(--muted)]">
+          <p className="text-[10px] sm:text-[11px] tracking-wide text-[var(--muted)] px-2">
             Single-client dedication — Kumkum accepts only one high-profile bridal or editorial commission per date.
           </p>
         </div>

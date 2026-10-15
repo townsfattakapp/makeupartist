@@ -4,8 +4,8 @@ import { InstagramIcon } from './InstagramIcon';
 
 export function Footer() {
   return (
-    <footer className="border-t border-[var(--border)] bg-[var(--background-subtle)] text-[var(--foreground)] pt-16 pb-12 transition-colors">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+    <footer className="border-t border-[var(--border)] bg-[var(--background-subtle)] text-[var(--foreground)] pt-14 sm:pt-16 pb-12 transition-colors overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 mb-16">
           {/* Brand & Statement */}
           <div className="lg:col-span-2 space-y-4">

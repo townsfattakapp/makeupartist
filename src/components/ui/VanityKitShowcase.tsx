@@ -62,19 +62,19 @@ const PRESTIGE_KIT_ITEMS: KitItem[] = [
 
 export function VanityKitShowcase() {
   return (
-    <section className="py-20 bg-[var(--background-subtle)] border-y border-[var(--border)]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 space-y-12">
+    <section className="py-14 sm:py-20 bg-[var(--background-subtle)] border-y border-[var(--border)] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10 sm:space-y-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2">
-            <span className="text-xs tracking-ultra-wide uppercase font-semibold text-[var(--accent)] flex items-center space-x-1.5">
+            <span className="text-[11px] sm:text-xs tracking-wider sm:tracking-ultra-wide uppercase font-semibold text-[var(--accent)] flex items-center space-x-1.5">
               <Sparkles className="w-3.5 h-3.5" />
               <span>The Professional Vanity Kit</span>
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[var(--foreground)]">
+            <h2 className="font-serif text-2xl sm:text-4xl text-[var(--foreground)]">
               Prestige Formulas Behind The Glow
             </h2>
-            <p className="text-sm text-[var(--muted)] max-w-2xl leading-relaxed">
+            <p className="text-xs sm:text-sm text-[var(--muted)] max-w-2xl leading-relaxed">
               We never cut corners with high-street cosmetics. Every bottle, pigment, and cream in Kumkum’s mobile trunk is hand-selected from the world’s leading dermatological and luxury beauty houses.
             </p>
           </div>
@@ -91,13 +91,13 @@ export function VanityKitShowcase() {
         </div>
 
         {/* Kit Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {PRESTIGE_KIT_ITEMS.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="group p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] hover:border-[var(--accent)] transition-all duration-300 shadow-xs hover:shadow-lg flex flex-col justify-between space-y-4"
+                className="group p-5 sm:p-6 rounded-2xl bg-[var(--card)] border border-[var(--border)] hover:border-[var(--accent)] transition-all duration-300 shadow-xs hover:shadow-lg flex flex-col justify-between space-y-4"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">

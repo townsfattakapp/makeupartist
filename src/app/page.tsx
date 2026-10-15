@@ -28,12 +28,12 @@ export default async function HomePage() {
   const testimonials = await repository.getTestimonials();
 
   return (
-    <div className="min-h-screen flex flex-col bg-[var(--background)] text-[var(--foreground)]">
+    <div className="min-h-screen flex flex-col bg-[var(--background)] text-[var(--foreground)] w-full max-w-full overflow-x-hidden">
       <Header />
 
-      <main className="flex-1">
+      <main className="flex-1 w-full max-w-full overflow-x-hidden">
         {/* HERO SECTION WITH LUXURY MAKEUP ARTISTRY IMMERSION */}
-        <section className="relative min-h-[94vh] flex items-center justify-center overflow-hidden pt-20">
+        <section className="relative min-h-[92vh] sm:min-h-[94vh] flex items-center justify-center overflow-hidden pt-20 w-full max-w-full">
           {/* Background Video / Beauty Reel */}
           <div className="absolute inset-0 z-0">
             <video
@@ -51,27 +51,27 @@ export default async function HomePage() {
           </div>
 
           {/* Hero Beauty Content */}
-          <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 text-center text-white py-16 space-y-6">
-            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[11px] tracking-ultra-wide uppercase font-semibold text-[var(--accent)] animate-fadeIn">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>Haute Bridal & Celebrity Makeup Artistry</span>
+          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 text-center text-white py-12 sm:py-16 space-y-5 sm:space-y-6">
+            <div className="inline-flex items-center space-x-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-[10px] sm:text-[11px] tracking-wider sm:tracking-ultra-wide uppercase font-semibold text-[var(--accent)] shadow-md animate-fadeIn">
+              <Sparkles className="w-3.5 h-3.5 shrink-0" />
+              <span>Haute Bridal & Celebrity Artistry</span>
             </div>
 
-            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.05] font-normal drop-shadow-md">
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[1.12] sm:leading-[1.05] font-normal drop-shadow-md">
               Glass Skin Radiance, <br />
               <span className="italic font-light text-[var(--accent)]">Quietly Perfected.</span>
             </h1>
 
-            <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-white/85 font-light leading-relaxed tracking-wide">
+            <p className="max-w-2xl mx-auto text-xs sm:text-base md:text-lg text-white/90 font-light leading-relaxed tracking-wide px-2">
               Bespoke facial architecture, custom hand-blended pigments, and dedicated wedding day accompaniment across Mayfair, the Cotswolds, and European destinations.
             </p>
 
             {/* Primary Actions */}
-            <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-md sm:max-w-none mx-auto">
               <Link
                 href="/portfolio"
                 id="hero-portfolio-btn"
-                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-3.5 rounded-full bg-white text-black hover:bg-[var(--accent)] transition-all duration-300 text-xs tracking-luxury uppercase font-semibold shadow-lg hover:shadow-2xl cursor-pointer group"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 sm:px-8 py-3.5 rounded-full bg-white text-black hover:bg-[var(--accent)] transition-all duration-300 text-xs tracking-luxury uppercase font-semibold shadow-lg hover:shadow-2xl cursor-pointer group"
               >
                 <span>Explore The Artistry Archive</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -80,15 +80,38 @@ export default async function HomePage() {
               <Link
                 href="/enquire"
                 id="hero-enquire-btn"
-                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-3.5 rounded-full bg-transparent border border-white/40 text-white hover:bg-white/15 hover:border-white transition-all duration-300 text-xs tracking-luxury uppercase font-medium backdrop-blur-xs cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 sm:px-8 py-3.5 rounded-full bg-black/40 sm:bg-transparent border border-white/40 text-white hover:bg-white/15 hover:border-white transition-all duration-300 text-xs tracking-luxury uppercase font-medium backdrop-blur-xs cursor-pointer"
               >
                 <span>Check Date Availability</span>
               </Link>
             </div>
 
-            {/* Tactile Makeup Highlights Strip - Single Line Luxury Ribbon */}
-            <div className="pt-10 flex justify-center w-full">
-              <div className="inline-flex items-center space-x-3 sm:space-x-5 px-5 sm:px-8 py-2.5 rounded-full bg-black/45 backdrop-blur-md border border-white/20 text-[11px] sm:text-xs tracking-luxury uppercase text-white/95 font-medium whitespace-nowrap overflow-x-auto max-w-full shadow-lg">
+            {/* Tactile Makeup Highlights Strip:
+                - Desktop/Tablet: ONE SINGLE UNBROKEN LUXURY RIBBON
+                - Mobile: ELEGANT 2x2 LUXURY SEALS (ZERO horizontal scrolling, super impressive) */}
+            <div className="pt-6 sm:pt-10 flex justify-center w-full">
+              {/* Mobile 2x2 Luxury Grid - No Horizontal Scrolling */}
+              <div className="md:hidden grid grid-cols-2 gap-2 w-full max-w-md mx-auto">
+                <div className="flex items-center space-x-2 p-2.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/15 shadow-sm text-left">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0 shadow-xs shadow-[var(--accent)]" />
+                  <span className="text-[10px] tracking-wide uppercase font-medium text-white/95 leading-tight">45-Min Lymphatic Prep</span>
+                </div>
+                <div className="flex items-center space-x-2 p-2.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/15 shadow-sm text-left">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0 shadow-xs shadow-[var(--accent)]" />
+                  <span className="text-[10px] tracking-wide uppercase font-medium text-white/95 leading-tight">16-Hour Tear-Proof</span>
+                </div>
+                <div className="flex items-center space-x-2 p-2.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/15 shadow-sm text-left">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0 shadow-xs shadow-[var(--accent)]" />
+                  <span className="text-[10px] tracking-wide uppercase font-medium text-white/95 leading-tight">Prestige Clean Kit</span>
+                </div>
+                <div className="flex items-center space-x-2 p-2.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/15 shadow-sm text-left">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0 shadow-xs shadow-[var(--accent)]" />
+                  <span className="text-[10px] tracking-wide uppercase font-medium text-white/95 leading-tight">Single Client Focus</span>
+                </div>
+              </div>
+
+              {/* Desktop & Tablet Single Line Ribbon */}
+              <div className="hidden md:inline-flex items-center space-x-4 lg:space-x-6 px-7 lg:px-9 py-3 rounded-full bg-black/55 backdrop-blur-md border border-white/20 text-xs tracking-luxury uppercase text-white font-medium shadow-xl">
                 <div className="flex items-center space-x-2 shrink-0">
                   <span className="w-2 h-2 rounded-full bg-[var(--accent)] shadow-xs shadow-[var(--accent)]" />
                   <span>45-Min Lymphatic Prep</span>
@@ -120,32 +143,32 @@ export default async function HomePage() {
         <BeautyAnatomyCanvas />
 
         {/* INTERACTIVE BRIDAL & EVENT AESTHETIC QUIZ */}
-        <section className="py-24 max-w-7xl mx-auto px-6 sm:px-8">
+        <section className="py-14 sm:py-24 max-w-7xl mx-auto px-4 sm:px-8">
           <SectionHeading
             badge="The Aesthetic Matcher"
             title="Discover Your Signature Bridal Style"
             subtitle="Take our 60-second interactive consultation to match your wedding gown silhouette, venue lighting, and personal comfort level with a tailored makeup architecture."
             centered
-            className="mb-12"
+            className="mb-10 sm:mb-12"
           />
 
           <AestheticQuiz />
         </section>
 
         {/* THE COUTURE COLOR BAR (SWATCHES & FORMULATION DETAILS) */}
-        <section className="py-16 max-w-7xl mx-auto px-6 sm:px-8">
+        <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-8">
           <CosmeticSwatches />
         </section>
 
         {/* CURATED PORTFOLIO ARCHIVES */}
-        <section className="py-24 max-w-7xl mx-auto px-6 sm:px-8">
+        <section className="py-14 sm:py-24 max-w-7xl mx-auto px-4 sm:px-8">
           <SectionHeading
             badge="Artistry Archive"
             title="Featured Editorial & Bridal Looks"
             subtitle="Explore distinctive finishes honoring diverse skin tones, from dew-drenched glass skin to sculptured velvet matte."
             actionText="View Complete Portfolio"
             actionHref="/portfolio"
-            className="mb-12"
+            className="mb-10 sm:mb-12"
           />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -159,17 +182,17 @@ export default async function HomePage() {
         <VanityKitShowcase />
 
         {/* SIGNATURE SERVICES & EXPERIENCES */}
-        <section className="py-24 max-w-7xl mx-auto px-6 sm:px-8">
+        <section className="py-14 sm:py-24 max-w-7xl mx-auto px-4 sm:px-8">
           <SectionHeading
             badge="The Service Catalogue"
             title="Bespoke Artistry Commissions"
             subtitle="Indicative commission tiers designed for luxury weddings, red-carpet appearances, and private vanity masterclasses."
             actionText="View All Inclusions"
             actionHref="/services"
-            className="mb-12"
+            className="mb-10 sm:mb-12"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {services.map((svc, idx) => (
               <div
                 key={svc.id}
@@ -233,9 +256,9 @@ export default async function HomePage() {
         </section>
 
         {/* ARTIST STORY & BACKSTAGE MANIFESTO */}
-        <section className="py-20 bg-[var(--background-subtle)] border-t border-[var(--border)]">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <section className="py-14 sm:py-20 bg-[var(--background-subtle)] border-t border-[var(--border)] overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
               <div className="lg:col-span-5 relative">
                 <div className="relative aspect-3/4 rounded-2xl overflow-hidden border border-[var(--border)] shadow-xl">
                   <Image
@@ -246,9 +269,9 @@ export default async function HomePage() {
                     className="object-cover"
                   />
                 </div>
-                <div className="absolute -bottom-6 -right-6 p-4 rounded-xl bg-[var(--card)] border border-[var(--border)] shadow-lg hidden sm:block max-w-[220px]">
-                  <span className="font-serif text-2xl text-[var(--foreground)] block">12+ Years</span>
-                  <span className="text-[11px] text-[var(--muted)] uppercase tracking-wider">
+                <div className="absolute bottom-3 right-3 sm:-bottom-6 sm:-right-6 p-3 sm:p-4 rounded-xl bg-[var(--card)] border border-[var(--border)] shadow-lg max-w-[190px] sm:max-w-[220px]">
+                  <span className="font-serif text-xl sm:text-2xl text-[var(--foreground)] block">12+ Years</span>
+                  <span className="text-[10px] sm:text-[11px] text-[var(--muted)] uppercase tracking-wider">
                     London, Paris & Lake Como Artistry
                   </span>
                 </div>
@@ -300,20 +323,20 @@ export default async function HomePage() {
         <InstagramSection posts={instagramPosts} handle={settings.instagramHandle} />
 
         {/* TESTIMONIALS */}
-        <section className="py-24 max-w-7xl mx-auto px-6 sm:px-8">
+        <section className="py-14 sm:py-24 max-w-7xl mx-auto px-4 sm:px-8">
           <SectionHeading
             badge="Client Voices"
             title="Editorial & Bridal Acclaim"
             subtitle="Realistic sample reflections from brides and directors experiencing the Kumkum Patel accompaniment."
             centered
-            className="mb-16"
+            className="mb-10 sm:mb-16"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((test) => (
               <div
                 key={test.id}
-                className="p-8 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-xs flex flex-col justify-between space-y-6"
+                className="p-6 sm:p-8 rounded-2xl bg-[var(--card)] border border-[var(--border)] shadow-xs flex flex-col justify-between space-y-6"
               >
                 <div className="space-y-4">
                   <div className="flex items-center space-x-1 text-amber-500">
@@ -340,8 +363,8 @@ export default async function HomePage() {
         </section>
 
         {/* FINAL BOOKING INVITATION CTA */}
-        <section className="py-24 bg-[var(--foreground)] text-[var(--background)]">
-          <div className="max-w-4xl mx-auto px-6 sm:px-8 text-center space-y-6">
+        <section className="py-14 sm:py-24 bg-[var(--foreground)] text-[var(--background)] overflow-hidden">
+          <div className="max-w-4xl mx-auto px-4 sm:px-8 text-center space-y-6">
             <span className="text-xs tracking-ultra-wide uppercase text-[var(--accent)] font-semibold">
               Exclusive Commission Calendar
             </span>

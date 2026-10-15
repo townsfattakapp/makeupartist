@@ -82,15 +82,15 @@ export function CosmeticSwatches() {
     : BEAUTY_SWATCHES.filter((s) => s.category === activeCategory);
 
   return (
-    <div className="rounded-3xl bg-[var(--card)] border border-[var(--border)] p-6 sm:p-10 shadow-xl space-y-8">
+    <div className="rounded-2xl sm:rounded-3xl bg-[var(--card)] border border-[var(--border)] p-4 sm:p-10 shadow-xl space-y-6 sm:space-y-8">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[var(--border)] pb-6">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[var(--border)] pb-5 sm:pb-6">
         <div>
-          <span className="text-xs tracking-ultra-wide uppercase font-semibold text-[var(--accent)] flex items-center space-x-1.5 mb-2">
+          <span className="text-[11px] sm:text-xs tracking-wider sm:tracking-ultra-wide uppercase font-semibold text-[var(--accent)] flex items-center space-x-1.5 mb-2">
             <Palette className="w-3.5 h-3.5" />
             <span>The Couture Color Bar</span>
           </span>
-          <h3 className="font-serif text-2xl sm:text-3xl text-[var(--foreground)]">
+          <h3 className="font-serif text-xl sm:text-3xl text-[var(--foreground)]">
             Hand-Blended Shade Architecture
           </h3>
           <p className="text-xs sm:text-sm text-[var(--muted)] mt-1 max-w-xl leading-relaxed">
@@ -98,14 +98,14 @@ export function CosmeticSwatches() {
           </p>
         </div>
 
-        {/* Category Pills */}
-        <div className="flex items-center space-x-1.5 overflow-x-auto pb-1 text-xs">
+        {/* Category Pills - Wrapped with Zero Horizontal Scrolling */}
+        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 text-xs">
           {(['All', 'Lips', 'Glow', 'Cheeks', 'Eyes'] as const).map((cat) => (
             <button
               key={cat}
               type="button"
               onClick={() => setActiveCategory(cat)}
-              className={`px-3.5 py-1.5 rounded-full font-medium transition-all cursor-pointer ${
+              className={`px-3 sm:px-3.5 py-1.5 rounded-full font-medium transition-all cursor-pointer text-xs ${
                 activeCategory === cat
                   ? 'bg-[var(--foreground)] text-[var(--background)] shadow-xs'
                   : 'bg-[var(--background-subtle)] text-[var(--muted)] hover:text-[var(--foreground)] border border-[var(--border)]'
@@ -118,7 +118,7 @@ export function CosmeticSwatches() {
       </div>
 
       {/* Swatches Visual Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
         {filteredSwatches.map((swatch) => {
           const isSelected = selectedSwatch.name === swatch.name;
           return (
@@ -187,7 +187,7 @@ export function CosmeticSwatches() {
 
         <Link
           href={`/portfolio/${selectedSwatch.pairedLookSlug}`}
-          className="shrink-0 inline-flex items-center space-x-1.5 px-5 py-2.5 rounded-full bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--accent)] hover:text-black text-xs tracking-luxury uppercase font-medium transition-all shadow-xs"
+          className="w-full sm:w-auto shrink-0 inline-flex items-center justify-center space-x-1.5 px-5 py-3 sm:py-2.5 rounded-full bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--accent)] hover:text-black text-xs tracking-luxury uppercase font-medium transition-all shadow-xs text-center"
         >
           <span>See Look: {selectedSwatch.pairedLook}</span>
           <ArrowUpRight className="w-3.5 h-3.5" />

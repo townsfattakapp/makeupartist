@@ -108,23 +108,23 @@ export function BeautyAnatomyCanvas() {
   };
 
   return (
-    <section className="relative py-24 bg-[var(--background)] border-b border-[var(--border)] overflow-hidden">
+    <section className="relative py-14 sm:py-24 bg-[var(--background)] border-b border-[var(--border)] overflow-hidden">
       {/* Subtle vector backdrop curves */}
       <FloatingBeautyAccents />
 
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 space-y-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-8 space-y-10 sm:space-y-16">
         {/* Section Title - Super Aligned & Crystal Clear */}
-        <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/30 text-[var(--accent)] text-xs tracking-ultra-wide uppercase font-semibold">
+        <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4">
+          <div className="inline-flex items-center space-x-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/30 text-[var(--accent)] text-[11px] sm:text-xs tracking-wider sm:tracking-ultra-wide uppercase font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
             <span>The Artistry Face Chart</span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-5xl text-[var(--foreground)] tracking-tight">
+          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-[var(--foreground)] tracking-tight">
             Anatomy of Haute Artistry
           </h2>
 
-          <p className="text-sm sm:text-base text-[var(--muted)] leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xs sm:text-base text-[var(--muted)] leading-relaxed max-w-2xl mx-auto px-1">
             Backstage at premier bridal couture runways, every bespoke transformation begins with a hand-drawn face chart.
             Explore the facial planes, bespoke brushwork, and formulation placements that define Kumkum Patel’s signature aesthetic.
           </p>
@@ -134,14 +134,14 @@ export function BeautyAnatomyCanvas() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           {/* LEFT: Face Chart Canvas with Glowing Interactive Vector Hotspots */}
           <div className="lg:col-span-7 flex flex-col justify-between space-y-4">
-            <div className="relative w-full aspect-[5/6] bg-[var(--card)] rounded-3xl border border-[var(--border)] p-6 sm:p-8 shadow-xl overflow-hidden flex flex-col justify-between">
+            <div className="relative w-full aspect-[5/6] sm:aspect-square bg-[var(--card)] rounded-2xl sm:rounded-3xl border border-[var(--border)] p-4 sm:p-8 shadow-xl overflow-hidden flex flex-col justify-between">
               {/* Corner Editorial Label */}
-              <div className="flex items-center justify-between border-b border-[var(--border)] pb-3 z-10">
-                <span className="text-[10px] sm:text-xs tracking-ultra-wide uppercase text-[var(--muted)] font-mono">
-                  Kumkum Patel Atelier / Face Chart Specimen #01
+              <div className="flex items-center justify-between border-b border-[var(--border)] pb-3 z-10 gap-2">
+                <span className="text-[9px] sm:text-xs tracking-wider sm:tracking-ultra-wide uppercase text-[var(--muted)] font-mono truncate">
+                  Kumkum Patel Atelier / Specimen #01
                 </span>
 
-                <div className="text-[10px] sm:text-xs tracking-widest uppercase text-[var(--accent)] font-semibold flex items-center space-x-1.5">
+                <div className="text-[9px] sm:text-xs tracking-widest uppercase text-[var(--accent)] font-semibold flex items-center space-x-1.5 shrink-0">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   <span>Interactive Map</span>
                 </div>
@@ -214,42 +214,42 @@ export function BeautyAnatomyCanvas() {
           </div>
 
           {/* RIGHT: Active Zone Specification & Formulation Breakdown */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
-            <div className="p-8 rounded-3xl bg-[var(--card)] border border-[var(--border)] shadow-xl relative overflow-hidden space-y-6 flex-1 flex flex-col justify-between">
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-4 sm:space-y-6">
+            <div className="p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-[var(--card)] border border-[var(--border)] shadow-xl relative overflow-hidden space-y-5 sm:space-y-6 flex-1 flex flex-col justify-between">
               {/* Ambient gold glow */}
               <div className="absolute -top-12 -right-12 w-40 h-40 bg-[var(--accent)]/15 rounded-full blur-2xl pointer-events-none" />
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {/* Header with tool vector icon */}
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex items-start justify-between gap-3 sm:gap-4">
                   <div className="space-y-1">
-                    <span className="text-[11px] tracking-ultra-wide uppercase font-semibold text-[var(--accent)] block">
+                    <span className="text-[10px] sm:text-[11px] tracking-wider sm:tracking-ultra-wide uppercase font-semibold text-[var(--accent)] block">
                       {activeSpot.zone}
                     </span>
-                    <h3 className="font-serif text-2xl sm:text-3xl text-[var(--foreground)]">
+                    <h3 className="font-serif text-xl sm:text-3xl text-[var(--foreground)]">
                       {activeSpot.name}
                     </h3>
                   </div>
 
-                  <div className="p-3 rounded-2xl bg-[var(--background)] border border-[var(--border)] shrink-0 shadow-inner">
+                  <div className="p-2.5 sm:p-3 rounded-2xl bg-[var(--background)] border border-[var(--border)] shrink-0 shadow-inner">
                     {renderToolIcon(activeSpot.toolType)}
                   </div>
                 </div>
 
                 {/* Technique Description */}
-                <div className="space-y-2">
-                  <span className="text-[10px] tracking-widest uppercase font-mono text-[var(--muted)]">
+                <div className="space-y-1.5 sm:space-y-2">
+                  <span className="text-[9px] sm:text-[10px] tracking-widest uppercase font-mono text-[var(--muted)]">
                     The Artist’s Technique
                   </span>
-                  <p className="text-sm text-[var(--foreground)] leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[var(--foreground)] leading-relaxed">
                     {activeSpot.technique}
                   </p>
                 </div>
 
                 {/* Two-Column Specification */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="p-3.5 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-1">
-                    <span className="text-[10px] tracking-widest uppercase text-[var(--accent)] font-semibold block">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="p-3 sm:p-3.5 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-1">
+                    <span className="text-[9px] sm:text-[10px] tracking-widest uppercase text-[var(--accent)] font-semibold block">
                       Essential Tool
                     </span>
                     <p className="text-xs text-[var(--foreground)] font-medium leading-snug">
@@ -257,8 +257,8 @@ export function BeautyAnatomyCanvas() {
                     </p>
                   </div>
 
-                  <div className="p-3.5 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-1">
-                    <span className="text-[10px] tracking-widest uppercase text-[var(--accent)] font-semibold block">
+                  <div className="p-3 sm:p-3.5 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-1">
+                    <span className="text-[9px] sm:text-[10px] tracking-widest uppercase text-[var(--accent)] font-semibold block">
                       Formula Placement
                     </span>
                     <p className="text-xs text-[var(--foreground)] font-medium leading-snug">
@@ -268,12 +268,12 @@ export function BeautyAnatomyCanvas() {
                 </div>
 
                 {/* The Wedding Day Advantage Card - Well-Formatted & Elegant */}
-                <div className="p-4 sm:p-5 rounded-2xl bg-[var(--accent)]/10 border border-[var(--accent)]/25 space-y-2">
-                  <div className="flex items-center space-x-2 text-[11px] tracking-ultra-wide uppercase font-semibold text-[var(--accent)]">
+                <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-[var(--accent)]/10 border border-[var(--accent)]/25 space-y-2">
+                  <div className="flex items-center space-x-2 text-[10px] sm:text-[11px] tracking-wider sm:tracking-ultra-wide uppercase font-semibold text-[var(--accent)]">
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>The Wedding Day Advantage</span>
                   </div>
-                  <p className="font-serif text-sm sm:text-base italic text-[var(--foreground)] leading-relaxed pl-1">
+                  <p className="font-serif text-xs sm:text-base italic text-[var(--foreground)] leading-relaxed pl-1">
                     “{activeSpot.clientBenefit}”
                   </p>
                 </div>
@@ -283,7 +283,7 @@ export function BeautyAnatomyCanvas() {
               <div className="pt-2">
                 <Link
                   href="/enquire"
-                  className="w-full flex items-center justify-center space-x-2 px-6 py-4 rounded-full bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--accent)] hover:text-black text-xs sm:text-sm tracking-luxury uppercase font-semibold transition-all shadow-md hover:shadow-xl text-center group"
+                  className="w-full flex items-center justify-center space-x-2 px-5 py-3.5 sm:py-4 rounded-full bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--accent)] hover:text-black text-xs sm:text-sm tracking-luxury uppercase font-semibold transition-all shadow-md hover:shadow-xl text-center group"
                 >
                   <span>Book Facial Architecture Consultation</span>
                   <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -292,25 +292,22 @@ export function BeautyAnatomyCanvas() {
             </div>
 
             {/* Atelier Toolset Strip */}
-            <div className="p-5 rounded-2xl bg-[var(--card)] border border-[var(--border)] flex items-center justify-between text-center gap-4">
-              <div className="flex flex-col items-center space-y-1 flex-1">
-                <SerumDropperVector className="w-8 h-8" />
-                <span className="text-[10px] tracking-wider uppercase text-[var(--muted)] font-medium">Cellular Prep</span>
+            <div className="p-3 sm:p-5 rounded-2xl bg-[var(--card)] border border-[var(--border)] grid grid-cols-4 gap-2 text-center">
+              <div className="flex flex-col items-center space-y-1">
+                <SerumDropperVector className="w-6 h-6 sm:w-8 sm:h-8" />
+                <span className="text-[9px] sm:text-[10px] tracking-wider uppercase text-[var(--muted)] font-medium leading-tight">Cellular Prep</span>
               </div>
-              <div className="h-8 w-px bg-[var(--border)]" />
-              <div className="flex flex-col items-center space-y-1 flex-1">
-                <MakeupBrushVector className="w-8 h-8" />
-                <span className="text-[10px] tracking-wider uppercase text-[var(--muted)] font-medium">Bone Sculpt</span>
+              <div className="flex flex-col items-center space-y-1 border-l border-[var(--border)] pl-1">
+                <MakeupBrushVector className="w-6 h-6 sm:w-8 sm:h-8" />
+                <span className="text-[9px] sm:text-[10px] tracking-wider uppercase text-[var(--muted)] font-medium leading-tight">Bone Sculpt</span>
               </div>
-              <div className="h-8 w-px bg-[var(--border)]" />
-              <div className="flex flex-col items-center space-y-1 flex-1">
-                <LashCurlerVector className="w-8 h-8" />
-                <span className="text-[10px] tracking-wider uppercase text-[var(--muted)] font-medium">Lash Lift</span>
+              <div className="flex flex-col items-center space-y-1 border-l border-[var(--border)] pl-1">
+                <LashCurlerVector className="w-6 h-6 sm:w-8 sm:h-8" />
+                <span className="text-[9px] sm:text-[10px] tracking-wider uppercase text-[var(--muted)] font-medium leading-tight">Lash Lift</span>
               </div>
-              <div className="h-8 w-px bg-[var(--border)]" />
-              <div className="flex flex-col items-center space-y-1 flex-1">
-                <LipstickVector className="w-8 h-8" />
-                <span className="text-[10px] tracking-wider uppercase text-[var(--muted)] font-medium">Velvet Lips</span>
+              <div className="flex flex-col items-center space-y-1 border-l border-[var(--border)] pl-1">
+                <LipstickVector className="w-6 h-6 sm:w-8 sm:h-8" />
+                <span className="text-[9px] sm:text-[10px] tracking-wider uppercase text-[var(--muted)] font-medium leading-tight">Velvet Lips</span>
               </div>
             </div>
           </div>

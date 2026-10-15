@@ -40,13 +40,13 @@ export function Header() {
           : 'bg-transparent py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
         {/* Brand Monogram & Title */}
         <Link href="/" className="group flex flex-col items-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] rounded-sm">
-          <span className="font-serif text-2xl sm:text-3xl tracking-widest text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors duration-300 font-medium">
+          <span className="font-serif text-xl sm:text-2xl md:text-3xl tracking-widest text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors duration-300 font-medium">
             KUMKUM PATEL
           </span>
-          <span className="text-[10px] tracking-luxury uppercase text-[var(--muted)] -mt-1 group-hover:text-[var(--foreground)] transition-colors">
+          <span className="text-[9px] sm:text-[10px] tracking-luxury uppercase text-[var(--muted)] -mt-0.5 sm:-mt-1 group-hover:text-[var(--foreground)] transition-colors">
             Haute Bridal & Editorial Artistry
           </span>
         </Link>

@@ -19,20 +19,20 @@ export function InstagramSection({
   const [isMuted, setIsMuted] = React.useState(true);
 
   return (
-    <section id="instagram" className="py-24 border-t border-[var(--border)] bg-[var(--background)]">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
+    <section id="instagram" className="py-14 sm:py-24 border-t border-[var(--border)] bg-[var(--background)] overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12">
           <div className="space-y-2">
-            <div className="flex items-center space-x-2 text-xs tracking-ultra-wide uppercase text-[var(--accent)] font-medium">
+            <div className="flex items-center space-x-2 text-[11px] sm:text-xs tracking-wider sm:tracking-ultra-wide uppercase text-[var(--accent)] font-medium">
               <InstagramIcon className="w-4 h-4 text-pink-500" />
               <span>Studio & Backstage Journal</span>
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse ml-2" title="Live Studio Curation Active" />
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[var(--foreground)]">
+            <h2 className="font-serif text-2xl sm:text-4xl text-[var(--foreground)]">
               Curated from Instagram
             </h2>
-            <p className="text-sm text-[var(--muted)] max-w-xl">
+            <p className="text-xs sm:text-sm text-[var(--muted)] max-w-xl">
               An intimate window into our London studio trials, backstage bridal preparations, and masterclass demonstrations.
             </p>
           </div>
@@ -41,7 +41,7 @@ export function InstagramSection({
             href={`https://instagram.com/${handle}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="shrink-0 inline-flex items-center space-x-2 px-5 py-2.5 rounded-full border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] text-xs tracking-luxury uppercase font-medium transition-all shadow-xs hover:shadow-md cursor-pointer group"
+            className="w-full sm:w-auto shrink-0 inline-flex items-center justify-center space-x-2 px-5 py-2.5 rounded-full border border-[var(--border)] bg-[var(--card)] hover:border-[var(--accent)] text-xs tracking-luxury uppercase font-medium transition-all shadow-xs hover:shadow-md cursor-pointer group text-center"
           >
             <span>Follow @{handle}</span>
             <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -49,7 +49,7 @@ export function InstagramSection({
         </div>
 
         {/* Media Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-4">
           {posts.map((post) => (
             <div
               key={post.id}

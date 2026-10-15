@@ -194,11 +194,11 @@ export function AestheticQuiz() {
   };
 
   return (
-    <div className="rounded-3xl bg-[var(--card)] border border-[var(--border)] overflow-hidden shadow-2xl p-6 sm:p-10 space-y-8">
+    <div className="rounded-2xl sm:rounded-3xl bg-[var(--card)] border border-[var(--border)] overflow-hidden shadow-2xl p-4 sm:p-10 space-y-6 sm:space-y-8">
       {/* Quiz Top Header */}
-      <div className="flex items-center justify-between border-b border-[var(--border)] pb-4">
-        <div className="flex items-center space-x-2 text-xs tracking-ultra-wide uppercase font-semibold text-[var(--accent)]">
-          <Sparkles className="w-4 h-4" />
+      <div className="flex items-center justify-between border-b border-[var(--border)] pb-3 sm:pb-4 gap-2">
+        <div className="flex items-center space-x-1.5 sm:space-x-2 text-[10px] sm:text-xs tracking-wider sm:tracking-ultra-wide uppercase font-semibold text-[var(--accent)]">
+          <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
           <span>Interactive Beauty Concierge</span>
         </div>
 
@@ -209,20 +209,21 @@ export function AestheticQuiz() {
             className="inline-flex items-center space-x-1.5 text-xs text-[var(--muted)] hover:text-[var(--foreground)] transition-colors cursor-pointer"
           >
             <RotateCcw className="w-3.5 h-3.5" />
-            <span>Retake Aesthetic Matcher</span>
+            <span className="hidden sm:inline">Retake Aesthetic Matcher</span>
+            <span className="sm:hidden">Reset</span>
           </button>
         ) : (
-          <span className="font-mono text-xs text-[var(--muted)]">
-            Step {currentStep + 1} of {QUIZ_QUESTIONS.length}
+          <span className="font-mono text-xs text-[var(--muted)] shrink-0">
+            {currentStep + 1} / {QUIZ_QUESTIONS.length}
           </span>
         )}
       </div>
 
       {/* QUIZ IN PROGRESS */}
       {!result ? (
-        <div className="space-y-6 animate-fadeIn">
-          <div className="space-y-2">
-            <h3 className="font-serif text-2xl sm:text-3xl text-[var(--foreground)]">
+        <div className="space-y-5 sm:space-y-6 animate-fadeIn">
+          <div className="space-y-1.5 sm:space-y-2">
+            <h3 className="font-serif text-xl sm:text-3xl text-[var(--foreground)]">
               {QUIZ_QUESTIONS[currentStep].question}
             </h3>
             <p className="text-xs sm:text-sm text-[var(--muted)]">
@@ -230,13 +231,13 @@ export function AestheticQuiz() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-1 sm:pt-2">
             {QUIZ_QUESTIONS[currentStep].options.map((opt, i) => (
               <button
                 key={i}
                 type="button"
                 onClick={() => handleSelectOption(opt.aestheticKey)}
-                className="group p-5 rounded-2xl border border-[var(--border)] bg-[var(--background-subtle)] hover:bg-[var(--accent-light)] hover:border-[var(--accent)] text-left transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md flex flex-col justify-between space-y-3"
+                className="group p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-[var(--border)] bg-[var(--background-subtle)] hover:bg-[var(--accent-light)] hover:border-[var(--accent)] text-left transition-all duration-300 cursor-pointer shadow-xs hover:shadow-md flex flex-col justify-between space-y-3"
               >
                 <div>
                   <div className="font-serif text-lg font-medium text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
@@ -314,10 +315,10 @@ export function AestheticQuiz() {
             </div>
 
             {/* Action Buttons */}
-            <div className="pt-2 flex flex-col sm:flex-row gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 href={`/enquire?look=${encodeURIComponent(result.title)}`}
-                className="inline-flex items-center justify-center space-x-2 px-8 py-3.5 rounded-full bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--accent)] hover:text-black text-xs tracking-luxury uppercase font-semibold transition-all shadow-md cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 sm:px-8 py-3.5 rounded-full bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--accent)] hover:text-black text-xs tracking-luxury uppercase font-semibold transition-all shadow-md cursor-pointer text-center"
               >
                 <span>Check Availability For This Aesthetic</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -325,7 +326,7 @@ export function AestheticQuiz() {
 
               <Link
                 href={`/portfolio/${result.lookSlug}`}
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-[var(--border)] text-xs tracking-luxury uppercase font-medium hover:border-[var(--foreground)] transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-full border border-[var(--border)] text-xs tracking-luxury uppercase font-medium hover:border-[var(--foreground)] transition-colors text-center"
               >
                 <span>Inspect Look Details</span>
               </Link>
