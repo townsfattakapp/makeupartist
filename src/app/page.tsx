@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, Award, Star, ShieldCheck, HeartHandshake, Compass, Palette, Droplets } from 'lucide-react';
+import { ArrowUpRight, Award, Star, ShieldCheck, HeartHandshake, Compass, Palette, Droplets, CheckCircle2, Clock } from 'lucide-react';
 import { repository } from '@/lib/db/repository';
 import { Header } from '@/components/ui/Header';
 import { Footer } from '@/components/ui/Footer';
@@ -8,6 +8,72 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { LookCard } from '@/components/ui/LookCard';
 import { InstagramSection } from '@/components/ui/InstagramSection';
 import { BeautyAnatomyCanvas } from '@/components/ui/BeautyAnatomyCanvas';
+
+const SERVICE_THEMES = [
+  {
+    // Card 1: The Haute Bridal Signature Experience (Bridal • ₹45,000)
+    badge: 'Signature Commission',
+    badgeIcon: '👑',
+    cardBorder: 'border-2 border-amber-500/60 hover:border-amber-400 shadow-lg shadow-amber-950/20 hover:shadow-2xl hover:shadow-amber-500/25',
+    cardBg: 'bg-gradient-to-b from-amber-50/90 via-orange-50/40 to-amber-100/30 dark:from-[#25150a] dark:via-[#190e06] dark:to-[#110904]',
+    topBar: 'bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500',
+    ambientGlow: 'from-amber-500/30 via-orange-500/15 to-transparent',
+    categoryBadge: 'bg-amber-500/15 text-amber-700 dark:text-amber-300 border-amber-500/30 font-bold',
+    priceText: 'text-amber-600 dark:text-amber-300 drop-shadow-sm',
+    priceBadge: 'bg-amber-500/10 text-amber-700 dark:text-amber-300 border-amber-500/25',
+    titleColor: 'text-[var(--foreground)] dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-300',
+    descriptionColor: 'text-[var(--muted)] dark:text-amber-100/75',
+    inclusionHeading: 'text-amber-800 dark:text-amber-200/90',
+    checkColor: 'text-amber-500 dark:text-amber-400',
+    inclusionText: 'text-[var(--foreground)]/90 dark:text-amber-100/85',
+    divider: 'border-amber-500/20',
+    durationPill: 'bg-amber-500/15 text-amber-700 dark:text-amber-300 border-amber-500/30',
+    ctaBtn: 'bg-gradient-to-r from-amber-500 via-amber-400 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-black font-semibold shadow-lg shadow-amber-500/30 hover:shadow-xl hover:shadow-amber-500/50',
+    popular: true,
+  },
+  {
+    // Card 2: Bridal Party & VIP Retinue Artistry (Bridal • ₹12,000)
+    badge: 'Cohesive Elegance',
+    badgeIcon: '🌸',
+    cardBorder: 'border-2 border-rose-400/60 hover:border-rose-400 shadow-lg shadow-rose-950/20 hover:shadow-2xl hover:shadow-rose-500/25',
+    cardBg: 'bg-gradient-to-b from-rose-50/90 via-pink-50/40 to-rose-100/30 dark:from-[#240e1b] dark:via-[#180912] dark:to-[#0f050b]',
+    topBar: 'bg-gradient-to-r from-rose-400 via-pink-400 to-rose-500',
+    ambientGlow: 'from-rose-500/30 via-pink-500/15 to-transparent',
+    categoryBadge: 'bg-rose-500/15 text-rose-700 dark:text-rose-300 border-rose-500/30 font-bold',
+    priceText: 'text-rose-600 dark:text-rose-300 drop-shadow-sm',
+    priceBadge: 'bg-rose-500/10 text-rose-700 dark:text-rose-300 border-rose-500/25',
+    titleColor: 'text-[var(--foreground)] dark:text-white group-hover:text-rose-600 dark:group-hover:text-rose-300',
+    descriptionColor: 'text-[var(--muted)] dark:text-rose-100/75',
+    inclusionHeading: 'text-rose-800 dark:text-rose-200/90',
+    checkColor: 'text-rose-500 dark:text-rose-400',
+    inclusionText: 'text-[var(--foreground)]/90 dark:text-rose-100/85',
+    divider: 'border-rose-500/20',
+    durationPill: 'bg-rose-500/15 text-rose-700 dark:text-rose-300 border-rose-500/30',
+    ctaBtn: 'bg-rose-500/20 hover:bg-rose-500 hover:text-black text-rose-700 dark:text-rose-200 border border-rose-500/40 font-semibold shadow-md shadow-rose-500/20 hover:shadow-lg hover:shadow-rose-500/40',
+    popular: false,
+  },
+  {
+    // Card 3: Red Carpet & Black Tie Gala Presence (Occasion • ₹22,000)
+    badge: 'High-Impact Glam',
+    badgeIcon: '💎',
+    cardBorder: 'border-2 border-indigo-400/60 hover:border-indigo-400 shadow-lg shadow-indigo-950/20 hover:shadow-2xl hover:shadow-indigo-500/20',
+    cardBg: 'bg-gradient-to-b from-indigo-50/90 via-sky-50/40 to-indigo-100/30 dark:from-[#0d1629] dark:via-[#080e1a] dark:to-[#050810]',
+    topBar: 'bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-500',
+    ambientGlow: 'from-indigo-500/30 via-purple-500/15 to-transparent',
+    categoryBadge: 'bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 border-indigo-500/30 font-bold',
+    priceText: 'text-indigo-600 dark:text-indigo-300 drop-shadow-sm',
+    priceBadge: 'bg-indigo-500/10 text-indigo-700 dark:text-indigo-300 border-indigo-500/25',
+    titleColor: 'text-[var(--foreground)] dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-300',
+    descriptionColor: 'text-[var(--muted)] dark:text-indigo-100/75',
+    inclusionHeading: 'text-indigo-800 dark:text-indigo-200/90',
+    checkColor: 'text-indigo-500 dark:text-indigo-400',
+    inclusionText: 'text-[var(--foreground)]/90 dark:text-indigo-100/85',
+    divider: 'border-indigo-500/20',
+    durationPill: 'bg-indigo-500/15 text-indigo-700 dark:text-indigo-300 border-indigo-500/30',
+    ctaBtn: 'bg-indigo-500/20 hover:bg-indigo-500 hover:text-black text-indigo-700 dark:text-indigo-200 border border-indigo-500/40 font-semibold shadow-md shadow-indigo-500/20 hover:shadow-lg hover:shadow-indigo-500/40',
+    popular: false,
+  },
+];
 
 export default async function HomePage() {
   const settings = await repository.getSettings();
@@ -165,58 +231,90 @@ export default async function HomePage() {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {services.map((svc, idx) => (
-              <div
-                key={svc.id}
-                className="group relative flex flex-col justify-between rounded-2xl bg-[var(--card)] border border-[var(--border)] overflow-hidden p-6 sm:p-8 transition-all duration-300 hover:shadow-xl hover:border-[var(--accent)]/60"
-              >
-                <div className="space-y-4 relative z-10">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[10px] tracking-ultra-wide uppercase font-semibold text-[var(--accent)]">
-                      {svc.category}
-                    </span>
-                    <span className="font-mono text-xs font-semibold text-[var(--foreground)]">
-                      {svc.priceIndicative}
-                    </span>
+            {services.map((svc, idx) => {
+              const theme = SERVICE_THEMES[idx % SERVICE_THEMES.length];
+              return (
+                <div
+                  key={svc.id}
+                  className={`group relative flex flex-col justify-between rounded-3xl ${theme.cardBg} ${theme.cardBorder} overflow-hidden p-6 sm:p-8 transition-all duration-500 ease-out hover:-translate-y-3 hover:scale-[1.01]`}
+                >
+                  {/* Glowing Top Illuminated Bar */}
+                  <div className={`absolute top-0 inset-x-0 h-1.5 ${theme.topBar} transition-all duration-300 group-hover:h-2`} />
+
+                  {/* Ambient Radial Color Light in Background */}
+                  <div className={`absolute -top-24 -right-24 w-60 h-60 rounded-full bg-gradient-to-br ${theme.ambientGlow} blur-3xl pointer-events-none group-hover:scale-150 transition-transform duration-700 opacity-60 group-hover:opacity-100`} />
+
+                  {/* Sweeping Silk Glaze Animation on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none z-20" />
+
+                  {/* Card Content */}
+                  <div className="space-y-5 relative z-10">
+                    {/* Top Row: Category & Price */}
+                    <div className="flex items-center justify-between gap-2">
+                      <div className="flex items-center space-x-2">
+                        <span className={`text-[10px] tracking-ultra-wide uppercase font-bold px-3 py-1 rounded-full border ${theme.categoryBadge}`}>
+                          {svc.category}
+                        </span>
+                        {theme.popular && (
+                          <span className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[9px] tracking-wider uppercase font-bold bg-amber-500/25 text-amber-700 dark:text-amber-300 border border-amber-500/40 animate-pulse">
+                            <span>{theme.badgeIcon}</span>
+                            <span>{theme.badge}</span>
+                          </span>
+                        )}
+                      </div>
+
+                      <span className={`font-mono text-base sm:text-lg font-bold px-3 py-1 rounded-full border ${theme.priceBadge} ${theme.priceText}`}>
+                        {svc.priceIndicative}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className={`font-serif text-2xl sm:text-[26px] leading-snug font-normal ${theme.titleColor} transition-colors duration-300`}>
+                      {svc.title}
+                    </h3>
+
+                    {/* Short Description */}
+                    <p className={`text-xs ${theme.descriptionColor} leading-relaxed font-light`}>
+                      {svc.shortDescription}
+                    </p>
+
+                    {/* Key Inclusions with Animated Hover */}
+                    <div className={`pt-4 border-t ${theme.divider} space-y-2.5`}>
+                      <span className={`text-[11px] font-semibold uppercase tracking-wider block ${theme.inclusionHeading}`}>
+                        Key Inclusions:
+                      </span>
+                      <ul className="space-y-2">
+                        {svc.inclusions.slice(0, 3).map((inc, i) => (
+                          <li
+                            key={i}
+                            className="flex items-start space-x-2.5 group/item transition-transform duration-200 hover:translate-x-1 text-xs"
+                          >
+                            <CheckCircle2 className={`w-4 h-4 shrink-0 mt-0.5 ${theme.checkColor} transition-transform duration-200 group-hover/item:scale-125`} />
+                            <span className={`${theme.inclusionText} leading-relaxed`}>{inc}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
-                  <h3 className="font-serif text-2xl text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors">
-                    {svc.title}
-                  </h3>
+                  {/* Bottom Footer: Duration & Details Link */}
+                  <div className={`pt-6 mt-6 border-t ${theme.divider} flex items-center justify-between gap-3 relative z-10`}>
+                    <div className={`inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-mono ${theme.durationPill}`}>
+                      <Clock className="w-3.5 h-3.5" />
+                      <span>~{svc.durationMinutes} Minutes</span>
+                    </div>
 
-                  <p className="text-xs text-[var(--muted)] leading-relaxed">
-                    {svc.shortDescription}
-                  </p>
-
-                  <div className="pt-4 border-t border-[var(--border)] space-y-2">
-                    <span className="text-[11px] font-semibold text-[var(--foreground)] uppercase tracking-wide block">
-                      Key Inclusions:
-                    </span>
-                    <ul className="text-xs text-[var(--muted)] space-y-1.5">
-                      {svc.inclusions.slice(0, 3).map((inc, i) => (
-                        <li key={i} className="flex items-start space-x-2">
-                          <span className="text-[var(--accent)] mt-0.5">•</span>
-                          <span>{inc}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    <Link
+                      href={`/services/${svc.slug}`}
+                      className={`inline-flex items-center space-x-1.5 px-4 py-2 rounded-full text-xs tracking-luxury uppercase font-semibold transition-all duration-300 group/btn ${theme.ctaBtn}`}
+                    >
+                      <span>Details & Prep</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
+                    </Link>
                   </div>
                 </div>
-
-                <div className="pt-6 mt-6 border-t border-[var(--border)] flex items-center justify-between">
-                  <span className="text-[11px] text-[var(--muted)] font-mono">
-                    ~{svc.durationMinutes} Minutes
-                  </span>
-                  <Link
-                    href={`/services/${svc.slug}`}
-                    className="inline-flex items-center space-x-1 text-xs tracking-luxury uppercase font-medium text-[var(--foreground)] hover:text-[var(--accent)] transition-colors"
-                  >
-                    <span>Details & Prep</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </Link>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
