@@ -47,7 +47,7 @@ export const INITIAL_SETTINGS: SiteSettings = {
   responseTimeHours: 24,
   seoTitle: 'Kumkum Patel | Luxury Haute Bridal & Editorial Makeup Artist',
   seoDescription: 'Premier luxury bridal and editorial makeup artist specializing in glass-skin radiance, architectural soft-glam, and bespoke wedding beauty.',
-  heroVideoUrl: '/assets/41c5de68208bb185bacd72f4f3fa8965_720w.mp4',
+  heroVideoUrl: '/assets/DulhanTrendz_pindown.io_1792068541.mp4',
   heroImageUrl: '/assets/8cefb0245c79153f745fc34d21844435.jpg',
   updatedAt: '2026-10-15T00:00:00Z',
 };

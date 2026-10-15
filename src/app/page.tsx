@@ -33,45 +33,45 @@ export default async function HomePage() {
 
       <main className="flex-1 w-full max-w-full overflow-x-hidden">
         {/* HERO SECTION WITH LUXURY MAKEUP ARTISTRY IMMERSION */}
-        <section className="relative min-h-[92vh] sm:min-h-[94vh] flex items-center justify-center overflow-hidden pt-20 w-full max-w-full">
-          {/* Background Video / Beauty Reel */}
+        <section className="relative min-h-[96vh] lg:min-h-screen flex flex-col justify-between items-center overflow-hidden pt-28 pb-10 sm:pb-14 w-full max-w-full">
+          {/* Background Video / Beauty Reel - Luminous, Warm & Cinematic */}
           <div className="absolute inset-0 z-0">
             <video
-              src={settings.heroVideoUrl || '/assets/41c5de68208bb185bacd72f4f3fa8965_720w.mp4'}
+              src={settings.heroVideoUrl || '/assets/DulhanTrendz_pindown.io_1792068541.mp4'}
               autoPlay
               muted
               loop
               playsInline
-              className="w-full h-full object-cover filter brightness-[0.70] contrast-[1.10] dark:brightness-[0.52]"
+              className="w-full h-full object-cover filter brightness-[0.84] contrast-[1.08] saturate-[1.12]"
             />
-            {/* Soft Editorial Vignette & Warm Tint */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-black/45 to-black/75" />
-            <div className="absolute inset-0 bg-radial-at-c from-transparent via-black/35 to-black/80" />
-            <FloatingBeautyAccents className="absolute inset-0 z-[1] pointer-events-none overflow-hidden opacity-40" />
+            {/* Elegant Editorial Vignette - Subtle & Warm, letting bridal glow shine through */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-black/40 to-black/60" />
+            <div className="absolute inset-0 bg-radial-at-c from-transparent via-black/25 to-black/70" />
+            <FloatingBeautyAccents className="absolute inset-0 z-[1] pointer-events-none overflow-hidden opacity-35" />
           </div>
 
           {/* Hero Beauty Content */}
-          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 text-center text-white py-12 sm:py-16 space-y-5 sm:space-y-6">
-            <div className="inline-flex items-center space-x-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-[10px] sm:text-[11px] tracking-wider sm:tracking-ultra-wide uppercase font-semibold text-[var(--accent)] shadow-md animate-fadeIn">
-              <Sparkles className="w-3.5 h-3.5 shrink-0" />
+          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 text-center text-white py-6 sm:py-10 space-y-6 sm:space-y-8 my-auto">
+            <div className="inline-flex items-center space-x-2.5 px-4 sm:px-5 py-2 rounded-full bg-black/60 backdrop-blur-md border border-[var(--accent)]/40 text-[11px] sm:text-xs tracking-widest sm:tracking-ultra-wide uppercase font-semibold text-[var(--accent)] shadow-xl animate-fadeIn">
+              <Sparkles className="w-3.5 h-3.5 shrink-0 text-[var(--accent)]" />
               <span>Haute Bridal & Celebrity Artistry</span>
             </div>
 
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-7xl lg:text-8xl tracking-tight leading-[1.12] sm:leading-[1.05] font-normal drop-shadow-md">
+            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl tracking-tight leading-[1.04] font-normal drop-shadow-2xl">
               Glass Skin Radiance, <br />
-              <span className="italic font-light text-[var(--accent)]">Quietly Perfected.</span>
+              <span className="italic font-light text-[var(--accent)] font-serif">Quietly Perfected.</span>
             </h1>
 
-            <p className="max-w-2xl mx-auto text-xs sm:text-base md:text-lg text-white/90 font-light leading-relaxed tracking-wide px-2">
-              Bespoke facial architecture, custom hand-blended pigments, and dedicated wedding day accompaniment across Mayfair, the Cotswolds, and European destinations.
+            <p className="max-w-3xl mx-auto text-sm sm:text-lg md:text-xl text-white/95 font-light leading-relaxed tracking-wide px-2 drop-shadow-md">
+              Bespoke facial architecture, custom hand-blended pigments, and dedicated wedding day accompaniment across Mumbai, Delhi, London, and global destination celebrations.
             </p>
 
             {/* Primary Actions */}
-            <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-md sm:max-w-none mx-auto">
+            <div className="pt-4 sm:pt-6 flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-lg sm:max-w-none mx-auto">
               <Link
                 href="/portfolio"
                 id="hero-portfolio-btn"
-                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 sm:px-8 py-3.5 rounded-full bg-white text-black hover:bg-[var(--accent)] transition-all duration-300 text-xs tracking-luxury uppercase font-semibold shadow-lg hover:shadow-2xl cursor-pointer group"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 px-8 sm:px-10 py-4 rounded-full bg-[var(--accent)] text-black hover:bg-[var(--accent-hover)] transition-all duration-300 text-xs sm:text-sm tracking-luxury uppercase font-semibold shadow-2xl hover:scale-105 cursor-pointer group"
               >
                 <span>Explore The Artistry Archive</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -80,57 +80,65 @@ export default async function HomePage() {
               <Link
                 href="/enquire"
                 id="hero-enquire-btn"
-                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-6 sm:px-8 py-3.5 rounded-full bg-black/40 sm:bg-transparent border border-white/40 text-white hover:bg-white/15 hover:border-white transition-all duration-300 text-xs tracking-luxury uppercase font-medium backdrop-blur-xs cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center space-x-2.5 px-8 sm:px-10 py-4 rounded-full bg-black/45 hover:bg-white/20 border border-white/50 hover:border-white text-white transition-all duration-300 text-xs sm:text-sm tracking-luxury uppercase font-medium backdrop-blur-md shadow-xl cursor-pointer"
               >
                 <span>Check Date Availability</span>
               </Link>
             </div>
+          </div>
 
-            {/* Tactile Makeup Highlights Strip:
-                - Desktop/Tablet: ONE SINGLE UNBROKEN LUXURY RIBBON
-                - Mobile: ELEGANT 2x2 LUXURY SEALS (ZERO horizontal scrolling, super impressive) */}
-            <div className="pt-6 sm:pt-10 flex justify-center w-full">
-              {/* Mobile 2x2 Luxury Grid - No Horizontal Scrolling */}
-              <div className="md:hidden grid grid-cols-2 gap-2 w-full max-w-md mx-auto">
-                <div className="flex items-center space-x-2 p-2.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/15 shadow-sm text-left">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0 shadow-xs shadow-[var(--accent)]" />
-                  <span className="text-[10px] tracking-wide uppercase font-medium text-white/95 leading-tight">45-Min Lymphatic Prep</span>
-                </div>
-                <div className="flex items-center space-x-2 p-2.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/15 shadow-sm text-left">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0 shadow-xs shadow-[var(--accent)]" />
-                  <span className="text-[10px] tracking-wide uppercase font-medium text-white/95 leading-tight">16-Hour Tear-Proof</span>
-                </div>
-                <div className="flex items-center space-x-2 p-2.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/15 shadow-sm text-left">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0 shadow-xs shadow-[var(--accent)]" />
-                  <span className="text-[10px] tracking-wide uppercase font-medium text-white/95 leading-tight">Prestige Clean Kit</span>
-                </div>
-                <div className="flex items-center space-x-2 p-2.5 rounded-xl bg-black/60 backdrop-blur-md border border-white/15 shadow-sm text-left">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0 shadow-xs shadow-[var(--accent)]" />
-                  <span className="text-[10px] tracking-wide uppercase font-medium text-white/95 leading-tight">Single Client Focus</span>
-                </div>
+          {/* Tactile Makeup Highlights Strip & Scroll Invitation */}
+          <div className="relative z-10 w-full px-4 flex flex-col items-center space-y-4">
+            {/* Mobile 2x2 Luxury Grid - No Horizontal Scrolling */}
+            <div className="md:hidden grid grid-cols-2 gap-2 w-full max-w-md mx-auto">
+              <div className="flex items-center space-x-2 p-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-[var(--accent)]/30 shadow-md text-left">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0 shadow-xs shadow-[var(--accent)]" />
+                <span className="text-[10px] tracking-wide uppercase font-semibold text-white/95 leading-tight">45-Min Lymphatic Prep</span>
               </div>
+              <div className="flex items-center space-x-2 p-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-[var(--accent)]/30 shadow-md text-left">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0 shadow-xs shadow-[var(--accent)]" />
+                <span className="text-[10px] tracking-wide uppercase font-semibold text-white/95 leading-tight">16-Hour Tear-Proof</span>
+              </div>
+              <div className="flex items-center space-x-2 p-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-[var(--accent)]/30 shadow-md text-left">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0 shadow-xs shadow-[var(--accent)]" />
+                <span className="text-[10px] tracking-wide uppercase font-semibold text-white/95 leading-tight">Prestige Clean Kit</span>
+              </div>
+              <div className="flex items-center space-x-2 p-2.5 rounded-xl bg-black/70 backdrop-blur-md border border-[var(--accent)]/30 shadow-md text-left">
+                <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0 shadow-xs shadow-[var(--accent)]" />
+                <span className="text-[10px] tracking-wide uppercase font-semibold text-white/95 leading-tight">Single Client Focus</span>
+              </div>
+            </div>
 
-              {/* Desktop & Tablet Single Line Ribbon */}
-              <div className="hidden md:inline-flex items-center space-x-4 lg:space-x-6 px-7 lg:px-9 py-3 rounded-full bg-black/55 backdrop-blur-md border border-white/20 text-xs tracking-luxury uppercase text-white font-medium shadow-xl">
-                <div className="flex items-center space-x-2 shrink-0">
-                  <span className="w-2 h-2 rounded-full bg-[var(--accent)] shadow-xs shadow-[var(--accent)]" />
-                  <span>45-Min Lymphatic Prep</span>
-                </div>
-                <span className="text-white/30 shrink-0">•</span>
-                <div className="flex items-center space-x-2 shrink-0">
-                  <span className="w-2 h-2 rounded-full bg-[var(--accent)] shadow-xs shadow-[var(--accent)]" />
-                  <span>16-Hour Tear-Proof Finish</span>
-                </div>
-                <span className="text-white/30 shrink-0">•</span>
-                <div className="flex items-center space-x-2 shrink-0">
-                  <span className="w-2 h-2 rounded-full bg-[var(--accent)] shadow-xs shadow-[var(--accent)]" />
-                  <span>Prestige Clean Kit</span>
-                </div>
-                <span className="text-white/30 shrink-0">•</span>
-                <div className="flex items-center space-x-2 shrink-0">
-                  <span className="w-2 h-2 rounded-full bg-[var(--accent)] shadow-xs shadow-[var(--accent)]" />
-                  <span>Single Client Dedication</span>
-                </div>
+            {/* Desktop & Tablet: Grand Single-Line Luxury Ribbon */}
+            <div className="hidden md:inline-flex items-center space-x-6 lg:space-x-8 px-8 lg:px-12 py-3.5 sm:py-4 rounded-full bg-black/70 backdrop-blur-xl border border-[var(--accent)]/40 text-xs sm:text-[13px] tracking-luxury uppercase text-white font-medium shadow-2xl">
+              <div className="flex items-center space-x-2.5 shrink-0">
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)] shadow-sm shadow-[var(--accent)]" />
+                <span className="font-semibold text-white">45-Min Lymphatic Prep</span>
+              </div>
+              <span className="text-[var(--accent)]/60 shrink-0 font-bold">•</span>
+              <div className="flex items-center space-x-2.5 shrink-0">
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)] shadow-sm shadow-[var(--accent)]" />
+                <span className="font-semibold text-white">16-Hour Tear-Proof Finish</span>
+              </div>
+              <span className="text-[var(--accent)]/60 shrink-0 font-bold">•</span>
+              <div className="flex items-center space-x-2.5 shrink-0">
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)] shadow-sm shadow-[var(--accent)]" />
+                <span className="font-semibold text-white">Prestige Clean Kit</span>
+              </div>
+              <span className="text-[var(--accent)]/60 shrink-0 font-bold">•</span>
+              <div className="flex items-center space-x-2.5 shrink-0">
+                <span className="w-2.5 h-2.5 rounded-full bg-[var(--accent)] shadow-sm shadow-[var(--accent)]" />
+                <span className="font-semibold text-white">Single Client Dedication</span>
+              </div>
+            </div>
+
+            {/* Subtle Editorial Scroll Prompt */}
+            <div className="pt-2 flex flex-col items-center space-y-1.5 opacity-75 hover:opacity-100 transition-opacity">
+              <span className="text-[9px] tracking-ultra-wide uppercase text-[var(--accent)] font-mono">
+                Scroll to Explore Artistry
+              </span>
+              <div className="w-4 h-7 rounded-full border border-white/25 flex items-start justify-center p-0.5">
+                <div className="w-1 h-1.5 rounded-full bg-[var(--accent)] animate-bounce" />
               </div>
             </div>
           </div>
