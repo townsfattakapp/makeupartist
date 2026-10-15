@@ -18,7 +18,7 @@ export default async function AboutPage() {
           {/* Header */}
           <SectionHeading
             badge="The Artist & Philosophy"
-            title="Aurelia Vance"
+            title="Kumkum Patel"
             subtitle="Bridging classical fine art discipline with backstage high-fashion technique to sculpt timeless, photographically immaculate beauty."
             className="mb-12"
           />
@@ -30,7 +30,7 @@ export default async function AboutPage() {
               <div className="relative aspect-3/4 rounded-2xl overflow-hidden border border-[var(--border)] shadow-xl">
                 <Image
                   src="/assets/8cefb0245c79153f745fc34d21844435.jpg"
-                  alt="Aurelia Vance - Senior Makeup Artist"
+                  alt="Kumkum Patel - Senior Makeup Artist"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover"
@@ -68,11 +68,11 @@ export default async function AboutPage() {
                 </h3>
 
                 <p className="text-sm text-[var(--muted)] leading-relaxed">
-                  With over a decade of dedicated artistry between London, Paris, and Lake Como, Aurelia Vance has developed an international reputation for quiet luxury: skin that looks like fresh silk in daylight, defies digital cinema cameras, and feels entirely weightless to the wearer.
+                  With over a decade of dedicated artistry for premier high-profile weddings and runways, Kumkum Patel has developed an international reputation for quiet luxury: skin that looks like fresh silk in daylight, defies digital cinema cameras, and feels entirely weightless to the wearer.
                 </p>
 
                 <p className="text-sm text-[var(--muted)] leading-relaxed">
-                  Having originally studied classical portrait oil painting at the Courtauld Institute, Aurelia translates chromatic theory and glaze layering directly onto human skin. Rather than using thick foundation layers that crack or oxidize over an emotional 14-hour celebration, she applies micro-pinpoint pigment only where tone balance is needed, preserving natural radiance and individuality.
+                  Having originally studied classical portrait oil painting, Kumkum translates chromatic theory and glaze layering directly onto human skin. Rather than using thick foundation layers that crack or oxidize over an emotional 14-hour celebration, she applies micro-pinpoint pigment only where tone balance is needed, preserving natural radiance and individuality.
                 </p>
               </div>
 
@@ -109,7 +109,7 @@ export default async function AboutPage() {
                       <span>Zero-Stress Presence</span>
                     </div>
                     <p className="text-xs text-[var(--muted)] leading-relaxed">
-                      On your wedding morning, calm is paramount. Aurelia works seamlessly with your photographer and hair stylists, ensuring you feel relaxed, centered, and completely cared for.
+                      On your wedding morning, calm is paramount. Kumkum works seamlessly with your photographer and hair stylists, ensuring you feel relaxed, centered, and completely cared for.
                     </p>
                   </div>
 

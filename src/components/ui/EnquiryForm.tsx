@@ -55,7 +55,7 @@ export function EnquiryForm({
     email: '',
     phone: '',
     aestheticNotes: lookFromParam ? `Interested in look: ${lookFromParam}` : '',
-    budgetRange: '£1,000 - £2,000',
+    budgetRange: '₹25,000 - ₹50,000',
     referenceImageUrl: '',
   });
 
@@ -178,7 +178,7 @@ export function EnquiryForm({
             Thank You, {submissionSuccess.fullName}
           </h2>
           <p className="text-sm text-[var(--muted)] max-w-md mx-auto leading-relaxed">
-            Your availability enquiry has been logged directly with Aurelia Vance’s studio. We guarantee a tailored response within{' '}
+            Your availability enquiry has been logged directly with Kumkum Patel’s studio. We guarantee a tailored response within{' '}
             <strong className="text-[var(--foreground)]">{responseTimeHours} business hours</strong>.
           </p>
         </div>
@@ -486,10 +486,10 @@ export function EnquiryForm({
                   onChange={(e) => updateField('budgetRange', e.target.value)}
                   className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--background)] text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
                 >
-                  <option value="Under £750">Under £750</option>
-                  <option value="£750 - £1,500">£750 - £1,500</option>
-                  <option value="£1,500 - £3,000">£1,500 - £3,000</option>
-                  <option value="£3,000+ (Destination / Multi-Day)">£3,000+ (Destination / Multi-Day)</option>
+                  <option value="Under ₹25,000">Under ₹25,000</option>
+                  <option value="₹25,000 - ₹50,000">₹25,000 - ₹50,000</option>
+                  <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
+                  <option value="₹1,00,000+ (Destination / Multi-Day)">₹1,00,000+ (Destination / Multi-Day)</option>
                 </select>
               </div>
             </div>

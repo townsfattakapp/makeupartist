@@ -9,7 +9,7 @@ import { ThemeToggle } from './ThemeToggle';
 const NAV_LINKS = [
   { label: 'Portfolio', href: '/portfolio' },
   { label: 'Services', href: '/services' },
-  { label: 'About Aurelia', href: '/about' },
+  { label: 'About Kumkum', href: '/about' },
   { label: 'Editorial Journal', href: '/#journal' },
   { label: 'Contact & FAQ', href: '/contact' },
 ];
@@ -44,10 +44,10 @@ export function Header() {
         {/* Brand Monogram & Title */}
         <Link href="/" className="group flex flex-col items-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] rounded-sm">
           <span className="font-serif text-2xl sm:text-3xl tracking-widest text-[var(--foreground)] group-hover:text-[var(--accent)] transition-colors duration-300 font-medium">
-            AURELIA LUXE
+            KUMKUM PATEL
           </span>
           <span className="text-[10px] tracking-luxury uppercase text-[var(--muted)] -mt-1 group-hover:text-[var(--foreground)] transition-colors">
-            Mayfair • Cotswolds • Lake Como
+            Haute Bridal & Editorial Artistry
           </span>
         </Link>
 

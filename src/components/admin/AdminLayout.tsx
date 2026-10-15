@@ -58,7 +58,7 @@ export function AdminLayout({ user, children }: AdminLayoutProps) {
           {/* Brand & Portal Header */}
           <div>
             <Link href="/" className="font-serif text-xl tracking-widest text-[var(--foreground)] hover:text-[var(--accent)] transition-colors font-medium">
-              AURELIA LUXE
+              KUMKUM PATEL
             </Link>
             <div className="text-[10px] tracking-ultra-wide uppercase text-[var(--accent)] mt-0.5 font-semibold">
               Studio Management CMS
@@ -151,7 +151,7 @@ export function AdminLayout({ user, children }: AdminLayoutProps) {
             <div className="w-72 bg-[var(--card)] p-6 flex flex-col justify-between h-full border-r border-[var(--border)] animate-fadeIn">
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
-                  <div className="font-serif text-lg font-bold">AURELIA LUXE</div>
+                  <div className="font-serif text-lg font-bold">KUMKUM PATEL</div>
                   <button onClick={() => setMobileOpen(false)} className="p-1 text-[var(--muted)]">
                     <X className="w-5 h-5" />
                   </button>

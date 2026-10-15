@@ -23,7 +23,7 @@ export default function TermsPage() {
               Terms of Commission & Retainer Policy
             </h1>
             <p className="text-xs text-[var(--muted)]">
-              Studio Commission Agreement Terms • Aurelia Luxe Artistry
+              Studio Commission Agreement Terms • Kumkum Patel Artistry
             </p>
           </div>
 

@@ -55,7 +55,7 @@ export default async function ContactPage() {
                     WhatsApp Concierge
                   </span>
                   <a
-                    href={`https://wa.me/${settings.whatsapp.replace(/[^0-9]/g, '')}?text=Hello%20Aurelia%20Luxe`}
+                    href={`https://wa.me/${settings.whatsapp.replace(/[^0-9]/g, '')}?text=Hello%20Kumkum%20Patel`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:underline flex items-center space-x-2"
@@ -73,25 +73,13 @@ export default async function ContactPage() {
               <div className="space-y-4 text-xs text-[var(--muted)]">
                 <div>
                   <span className="text-[10px] tracking-ultra-wide uppercase font-semibold text-[var(--accent)] block mb-1">
-                    Mayfair Preview Atelier (By Appointment)
+                    Atelier Preview Studio (By Appointment)
                   </span>
                   <p className="text-sm text-[var(--foreground)] leading-relaxed">
-                    28 Berkeley Square, Mayfair, London W1J 6EN
+                    Exclusive bridal trials & cosmetic moodboard consultations.
                   </p>
                   <p className="text-[11px] text-[var(--muted)] mt-0.5">
-                    Private 3-hour bridal trials & cosmetic moodboard consultations.
-                  </p>
-                </div>
-
-                <div className="pt-2 border-t border-[var(--border)]">
-                  <span className="text-[10px] tracking-ultra-wide uppercase font-semibold text-[var(--accent)] block mb-1">
-                    Cotswolds Studio Retreat
-                  </span>
-                  <p className="text-sm text-[var(--foreground)] leading-relaxed">
-                    Chipping Campden, Gloucestershire, GL55
-                  </p>
-                  <p className="text-[11px] text-[var(--muted)] mt-0.5">
-                    Servicing Daylesford, Estelle Manor, and Soho Farmhouse weddings.
+                    Servicing premier luxury hotel suites, residences & private venues.
                   </p>
                 </div>
               </div>
@@ -102,7 +90,7 @@ export default async function ContactPage() {
               <div className="space-y-4">
                 <h3 className="font-serif text-2xl text-[var(--foreground)]">Travel & Coverage</h3>
                 <p className="text-xs text-[var(--muted)] leading-relaxed">
-                  Aurelia travels regularly across the UK and Continental Europe with full mobile editorial lighting and backstage cosmetic trunks.
+                  Kumkum travels regularly for luxury bridal celebrations and destination weddings with full mobile editorial lighting and backstage cosmetic trunks.
                 </p>
                 <ul className="text-xs text-[var(--foreground)] space-y-2">
                   {settings.serviceAreas.map((area, i) => (

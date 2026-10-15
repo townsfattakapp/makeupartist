@@ -1,6 +1,6 @@
-# Aurelia Luxe — Luxury Haute Bridal & Editorial Makeup Artistry
+# Kumkum Patel — Luxury Haute Bridal & Editorial Makeup Artistry
 
-Aurelia Luxe is a bespoke luxury web platform and Content Management System (CMS) designed for high-profile bridal and editorial makeup commissions across London (Mayfair, Chelsea), The Cotswolds, Paris, and Lake Como.
+Kumkum Patel is a bespoke luxury web platform and Content Management System (CMS) designed for high-profile bridal, celebrity, and editorial makeup commissions.
 
 Built on **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS v4**, and **Tiger Cloud (PostgreSQL)**.
 
@@ -9,18 +9,18 @@ Built on **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS v4**, and *
 ## Features
 
 - **Editorial Visual Direction**: Cormorant Garamond & Plus Jakarta Sans typography, warm ivory/alabaster surfaces, obsidian text, and champagne gold accents.
-- **Persistent Dual Themes**: Seamless light and dark mode with zero color shift on makeup photography.
+- **Interactive Face Chart Vector Canvas**: Hand-drawn continuous line-art facial architecture with interactive hotspots.
+- **Haute Beauty Cosmetic Swatches**: The Couture Color Bar with interactive finish swatches (Velvet Matte, Dewy Glaze, Satin Cream, Liquid Gold, Smoked Silk).
 - **Interactive Before/After Slider**: Tactile image comparison showcasing authentic skin preparation vs. glass skin finish.
-- **Filterable Portfolio Archive**: Real-time URL query parameter filtering across Haute Bridal, Editorial, Red Carpet, and Natural Glow.
-- **Accessible Lightbox**: Keyboard-driven (`ESC`, `←`, `→`) fullscreen gallery with zoom and direct booking actions.
-- **5-Step Booking Enquiry Engine**: Client progress tracking, date availability validation, non-binding quote disclaimer, and instant unique reference generation.
+- **Inside the Luxury Vanity Kit**: Backstage curation (Augustinus Bader, Charlotte Tilbury, Tom Ford, Westman Atelier) & Hospital-Grade Hygiene standards.
+- **Interactive Bridal Aesthetic Matcher**: 3-step questionnaire calculating tailored palette and finish recommendations.
+- **5-Step Booking Enquiry Engine**: Client progress tracking, date availability validation, and unique reference generation.
 - **Protected Artist CMS (`/admin`)**:
   - Executive Dashboard with KPI statistics and inbound enquiry triage.
   - Enquiry CRM Pipeline (`NEW`, `CONTACTED`, `QUOTED`, `CONFIRMED`, `COMPLETED`, `CLOSED`) with internal notes.
   - Portfolio Look Manager with before/after pairing and status workflows (`PUBLISHED`, `DRAFT`, `ARCHIVED`).
-  - Service Package Editor for prices, inclusions, and client preparation guidelines.
+  - Service Package Editor for prices (INR ₹), inclusions, and client preparation guidelines.
   - Instagram Feed Curation studio for featured reels with consent management.
-  - Media Asset Library with alt text and responsive focal-point tuning.
   - Studio & SEO Settings with Owner permission enforcement.
 - **Tiger Cloud (PostgreSQL)**: Direct SSL pooling and automated migration scripts with dual-mode local fallback.
 
@@ -32,8 +32,8 @@ Access the studio portal at `/admin/login`:
 
 | Role | Email | Password | Scope |
 | :--- | :--- | :--- | :--- |
-| **Studio Owner** | `aurelia@aurelialuxe.com` | `LuxeOwner2026!` | Full administrative control (portfolio, pricing, brand & SEO settings) |
-| **Editorial Assistant** | `assistant@aurelialuxe.com` | `LuxeStudio2026!` | Daily operations (enquiry status, internal notes, Instagram curation) |
+| **Studio Owner** | `kumkum@kumkumpatel.com` | `LuxeOwner2026!` | Full administrative control (portfolio, pricing, brand & SEO settings) |
+| **Studio Coordinator** | `assistant@kumkumpatel.com` | `LuxeStudio2026!` | Daily operations (enquiry status, internal notes, Instagram curation) |
 
 *(Quick-fill demo buttons are provided on the login page)*
 

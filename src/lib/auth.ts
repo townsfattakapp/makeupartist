@@ -8,15 +8,20 @@ const AUTH_SECRET = process.env.AUTH_SECRET || 'aurelia_luxe_secure_jwt_secret_k
 
 // Realistic password verification with default demo accounts
 const CREDENTIALS: Record<string, { role: UserRole; name: string; passwordHash: string }> = {
-  'aurelia@aurelialuxe.com': {
+  'kumkum@kumkumpatel.com': {
     role: 'OWNER',
-    name: 'Aurelia Vance',
+    name: 'Kumkum Patel',
     // SHA256 of "LuxeOwner2026!"
     passwordHash: crypto.createHmac('sha256', AUTH_SECRET).update('LuxeOwner2026!').digest('hex'),
   },
-  'assistant@aurelialuxe.com': {
+  'aurelia@aurelialuxe.com': {
+    role: 'OWNER',
+    name: 'Kumkum Patel',
+    passwordHash: crypto.createHmac('sha256', AUTH_SECRET).update('LuxeOwner2026!').digest('hex'),
+  },
+  'assistant@kumkumpatel.com': {
     role: 'EDITOR',
-    name: 'Clara Delacroix',
+    name: 'Studio Coordinator',
     // SHA256 of "LuxeStudio2026!"
     passwordHash: crypto.createHmac('sha256', AUTH_SECRET).update('LuxeStudio2026!').digest('hex'),
   },

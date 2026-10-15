@@ -13,7 +13,7 @@ interface InstagramSectionProps {
 
 export function InstagramSection({
   posts,
-  handle = 'aurelialuxemakeup',
+  handle = 'kumkumpatelmakeup',
 }: InstagramSectionProps) {
   const [activeMedia, setActiveMedia] = React.useState<InstagramPost | null>(null);
   const [isMuted, setIsMuted] = React.useState(true);

@@ -31,7 +31,7 @@ export default function PrivacyPage() {
             <section className="space-y-2">
               <h2 className="font-serif text-xl text-[var(--foreground)]">1. Commitment to Client Discretion</h2>
               <p>
-                At Aurelia Luxe, we hold our clients’ personal affairs, wedding timelines, and privacy in the highest regard. We never sell, lease, or monetize your contact details, event locations, or personal imagery.
+                At Kumkum Patel Artistry, we hold our clients’ personal affairs, wedding timelines, and privacy in the highest regard. We never sell, lease, or monetize your contact details, event locations, or personal imagery.
               </p>
             </section>
 
@@ -58,7 +58,7 @@ export default function PrivacyPage() {
             <section className="space-y-2">
               <h2 className="font-serif text-xl text-[var(--foreground)]">4. Data Retention & Security</h2>
               <p>
-                Enquiry records are encrypted on secure database servers (Tiger Cloud / PostgreSQL) with restricted access limited to the lead artist and authorized studio coordinator. You may request deletion of your records at any time by contacting <a href="mailto:concierge@aurelialuxe.com" className="text-[var(--accent)] underline">concierge@aurelialuxe.com</a>.
+                Enquiry records are encrypted on secure database servers (Tiger Cloud / PostgreSQL) with restricted access limited to the lead artist and authorized studio coordinator. You may request deletion of your records at any time by contacting <a href="mailto:concierge@kumkumpatel.com" className="text-[var(--accent)] underline">concierge@kumkumpatel.com</a>.
               </p>
             </section>
           </div>

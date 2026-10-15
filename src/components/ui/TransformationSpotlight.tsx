@@ -42,7 +42,7 @@ export function TransformationSpotlight() {
                 Light Reflection Over Heavy Product
               </h3>
               <p className="text-xs sm:text-sm text-[var(--muted)] leading-relaxed">
-                Rather than suffocating the skin with heavy matte concealers, Aurelia uses botanical lymphatic drainage to sculpt the jawline and brow bones, followed by pinpoint micro-corrections that leave natural freckles glowing.
+                Rather than suffocating the skin with heavy matte concealers, Kumkum uses botanical lymphatic drainage to sculpt the jawline and brow bones, followed by pinpoint micro-corrections that leave natural freckles glowing.
               </p>
             </div>
 
@@ -83,17 +83,21 @@ export function TransformationSpotlight() {
                 </div>
               </div>
             </div>
-
-            <div className="pt-2 flex flex-col sm:flex-row gap-3">
-              <Link
-                href="/enquire"
-                className="inline-flex items-center justify-center space-x-2 px-6 py-3 rounded-full bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--accent)] hover:text-black text-xs tracking-luxury uppercase font-semibold transition-all shadow-sm"
-              >
-                <span>Reserve Your Transformation</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </Link>
-            </div>
           </div>
+        </div>
+
+        {/* PROPERLY CENTERED CALL TO ACTION */}
+        <div className="pt-4 flex flex-col items-center justify-center text-center space-y-3">
+          <Link
+            href="/enquire"
+            className="inline-flex items-center justify-center space-x-2.5 px-8 py-3.5 rounded-full bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--accent)] hover:text-black text-xs tracking-luxury uppercase font-semibold transition-all shadow-md hover:shadow-xl group"
+          >
+            <span>Reserve Your Transformation</span>
+            <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </Link>
+          <p className="text-[11px] tracking-wide text-[var(--muted)]">
+            Single-client dedication — Kumkum accepts only one high-profile bridal or editorial commission per date.
+          </p>
         </div>
       </div>
     </section>

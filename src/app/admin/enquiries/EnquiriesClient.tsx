@@ -228,7 +228,7 @@ export function EnquiriesClient({
 
                 <div className="flex items-center space-x-2">
                   <a
-                    href={`mailto:${selectedEnquiry.email}?subject=Aurelia%20Luxe%20Availability%20%5B${selectedEnquiry.referenceNumber}%5D`}
+                    href={`mailto:${selectedEnquiry.email}?subject=Kumkum%20Patel%20Availability%20%5B${selectedEnquiry.referenceNumber}%5D`}
                     className="p-2 rounded-lg border border-[var(--border)] hover:bg-[var(--background-subtle)] text-[var(--muted)] hover:text-[var(--foreground)] transition-colors"
                     title="Send Email"
                   >
@@ -334,7 +334,7 @@ export function EnquiriesClient({
                     rows={4}
                     value={editedNotes}
                     onChange={(e) => setEditedNotes(e.target.value)}
-                    placeholder="e.g. Quoted £1,800 package. Call with wedding planner scheduled for Thursday..."
+                    placeholder="e.g. Quoted ₹75,000 package. Call with wedding planner scheduled for Thursday..."
                     className="w-full p-3 rounded-xl border border-[var(--border)] bg-[var(--background)] text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
                   />
                 </div>

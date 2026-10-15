@@ -22,7 +22,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await repository.getSettings();
   return {
-    metadataBase: new URL('https://aurelialuxe.com'),
+    metadataBase: new URL('https://kumkumpatel.com'),
     title: {
       default: `${settings.studioName} | ${settings.tagline}`,
       template: `%s | ${settings.studioName}`,
@@ -30,19 +30,18 @@ export async function generateMetadata(): Promise<Metadata> {
     description: settings.seoDescription,
     keywords: [
       'luxury makeup artist',
-      'bridal makeup London',
+      'bridal makeup artist',
       'haute bridal beauty',
       'red carpet makeup',
-      'Mayfair makeup artist',
       'destination wedding makeup',
       'glass skin makeup',
-      'Aurelia Luxe',
+      'Kumkum Patel',
     ],
     authors: [{ name: settings.artistName }],
     openGraph: {
       type: 'website',
-      locale: 'en_GB',
-      url: 'https://aurelialuxe.com',
+      locale: 'en_IN',
+      url: 'https://kumkumpatel.com',
       title: `${settings.studioName} | ${settings.tagline}`,
       description: settings.seoDescription,
       siteName: settings.studioName,

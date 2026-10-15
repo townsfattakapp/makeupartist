@@ -63,7 +63,7 @@ export default async function EnquirePage({ searchParams }: EnquirePageProps) {
             </p>
             <div className="flex items-center justify-center space-x-4">
               <a
-                href={`https://wa.me/${settings.whatsapp.replace(/[^0-9]/g, '')}?text=Urgent%20Enquiry%20for%20Aurelia%20Luxe`}
+                href={`https://wa.me/${settings.whatsapp.replace(/[^0-9]/g, '')}?text=Urgent%20Enquiry%20for%20Kumkum%20Patel`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[var(--accent)] hover:underline flex items-center space-x-1 font-medium"

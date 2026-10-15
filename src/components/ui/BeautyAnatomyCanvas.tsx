@@ -113,9 +113,9 @@ export function BeautyAnatomyCanvas() {
       <FloatingBeautyAccents />
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 space-y-16">
-        {/* Section Title */}
+        {/* Section Title - Super Aligned & Crystal Clear */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/30 text-[var(--accent)] text-xs tracking-ultra-wide uppercase font-semibold">
+          <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/30 text-[var(--accent)] text-xs tracking-ultra-wide uppercase font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
             <span>The Artistry Face Chart</span>
           </div>
@@ -124,82 +124,84 @@ export function BeautyAnatomyCanvas() {
             Anatomy of Haute Artistry
           </h2>
 
-          <p className="text-sm sm:text-base text-[var(--muted)] leading-relaxed">
-            Backstage in Paris and Milan, every couture runway look begins with a hand-drawn face chart.
-            Explore the bespoke techniques and luxury formulation placement that construct Aurelia’s signature look.
+          <p className="text-sm sm:text-base text-[var(--muted)] leading-relaxed max-w-2xl mx-auto">
+            Backstage at premier bridal couture runways, every bespoke transformation begins with a hand-drawn face chart.
+            Explore the facial planes, bespoke brushwork, and formulation placements that define Kumkum Patel’s signature aesthetic.
           </p>
         </div>
 
-        {/* Interactive Face Chart Experience */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        {/* Interactive Face Chart Experience - Super Aligned Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
           {/* LEFT: Face Chart Canvas with Glowing Interactive Vector Hotspots */}
-          <div className="lg:col-span-7 flex flex-col items-center">
-            <div className="relative w-full max-w-md sm:max-w-lg aspect-[5/6] bg-[var(--card)] rounded-3xl border border-[var(--border)] p-6 shadow-xl overflow-hidden flex items-center justify-center">
+          <div className="lg:col-span-7 flex flex-col justify-between space-y-4">
+            <div className="relative w-full aspect-[5/6] bg-[var(--card)] rounded-3xl border border-[var(--border)] p-6 sm:p-8 shadow-xl overflow-hidden flex flex-col justify-between">
               {/* Corner Editorial Label */}
-              <div className="absolute top-5 left-6 text-[10px] tracking-ultra-wide uppercase text-[var(--muted)] font-mono border-b border-[var(--border)] pb-1">
-                Aurelia Luxe Studio / Face Chart Specimen #01
-              </div>
+              <div className="flex items-center justify-between border-b border-[var(--border)] pb-3 z-10">
+                <span className="text-[10px] sm:text-xs tracking-ultra-wide uppercase text-[var(--muted)] font-mono">
+                  Kumkum Patel Atelier / Face Chart Specimen #01
+                </span>
 
-              <div className="absolute top-5 right-6 text-[10px] tracking-widest uppercase text-[var(--accent)] font-semibold flex items-center space-x-1">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span>Interactive</span>
+                <div className="text-[10px] sm:text-xs tracking-widest uppercase text-[var(--accent)] font-semibold flex items-center space-x-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>Interactive Map</span>
+                </div>
               </div>
 
               {/* The SVG Line Art Face */}
-              <div className="w-full h-full flex items-center justify-center p-4">
-                <FaceChartVector className="w-full h-auto max-h-[480px]" activeHotspot={activeId} />
+              <div className="relative flex-1 w-full flex items-center justify-center py-4">
+                <FaceChartVector className="w-full h-auto max-h-[460px]" activeHotspot={activeId} />
+
+                {/* Interactive Vector Hotspot Pins */}
+                {BEAUTY_HOTSPOTS.map((spot) => {
+                  const isSelected = spot.id === activeId;
+                  return (
+                    <button
+                      key={spot.id}
+                      onClick={() => setActiveId(spot.id)}
+                      style={{ left: `${spot.xPercent}%`, top: `${spot.yPercent}%` }}
+                      className={`absolute -translate-x-1/2 -translate-y-1/2 group transition-all duration-300 focus:outline-none z-10 ${
+                        isSelected ? 'scale-125' : 'hover:scale-110'
+                      }`}
+                      title={spot.name}
+                    >
+                      <span className="relative flex h-8 w-8 items-center justify-center">
+                        {/* Outer ripple ring */}
+                        <span
+                          className={`absolute inline-flex h-full w-full rounded-full transition-opacity ${
+                            isSelected
+                              ? 'animate-ping bg-[var(--accent)] opacity-75'
+                              : 'bg-[var(--accent)] opacity-30 group-hover:opacity-60'
+                          }`}
+                        />
+                        {/* Inner metallic button */}
+                        <span
+                          className={`relative inline-flex items-center justify-center rounded-full h-5 w-5 text-[10px] font-bold border transition-colors ${
+                            isSelected
+                              ? 'bg-[var(--foreground)] text-[var(--background)] border-[var(--accent)] shadow-md shadow-[var(--accent)]/40'
+                              : 'bg-[var(--card)] text-[var(--foreground)] border-[var(--accent)] hover:bg-[var(--accent)] hover:text-black'
+                          }`}
+                        >
+                          +
+                        </span>
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
 
-              {/* Interactive Vector Hotspot Pins */}
-              {BEAUTY_HOTSPOTS.map((spot) => {
-                const isSelected = spot.id === activeId;
-                return (
-                  <button
-                    key={spot.id}
-                    onClick={() => setActiveId(spot.id)}
-                    style={{ left: `${spot.xPercent}%`, top: `${spot.yPercent}%` }}
-                    className={`absolute -translate-x-1/2 -translate-y-1/2 group transition-all duration-300 focus:outline-none z-10 ${
-                      isSelected ? 'scale-125' : 'hover:scale-110'
-                    }`}
-                    title={spot.name}
-                  >
-                    <span className="relative flex h-8 w-8 items-center justify-center">
-                      {/* Outer ripple ring */}
-                      <span
-                        className={`absolute inline-flex h-full w-full rounded-full transition-opacity ${
-                          isSelected
-                            ? 'animate-ping bg-[var(--accent)] opacity-75'
-                            : 'bg-[var(--accent)] opacity-30 group-hover:opacity-60'
-                        }`}
-                      />
-                      {/* Inner metallic button */}
-                      <span
-                        className={`relative inline-flex items-center justify-center rounded-full h-5 w-5 text-[10px] font-bold border transition-colors ${
-                          isSelected
-                            ? 'bg-[var(--foreground)] text-[var(--background)] border-[var(--accent)] shadow-md shadow-[var(--accent)]/40'
-                            : 'bg-[var(--card)] text-[var(--foreground)] border-[var(--accent)] hover:bg-[var(--accent)] hover:text-black'
-                        }`}
-                      >
-                        +
-                      </span>
-                    </span>
-                  </button>
-                );
-              })}
-
               {/* Bottom Instructions strip */}
-              <div className="absolute bottom-4 inset-x-6 text-center text-[11px] text-[var(--muted)] bg-[var(--background)]/80 backdrop-blur-xs py-2 px-3 rounded-xl border border-[var(--border)]">
-                Click any gold hotspot (+) on the face to inspect professional placement
+              <div className="text-center text-[11px] text-[var(--muted)] bg-[var(--background)]/85 backdrop-blur-xs py-2 px-4 rounded-xl border border-[var(--border)]">
+                Click any gold hotspot (+) on the facial map to inspect Kumkum’s technique & formulas
               </div>
             </div>
 
             {/* Quick-Select Zone Pills */}
-            <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
+            <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
               {BEAUTY_HOTSPOTS.map((spot) => (
                 <button
                   key={spot.id}
                   onClick={() => setActiveId(spot.id)}
-                  className={`px-3 py-1.5 rounded-full text-xs transition-all font-medium ${
+                  className={`px-4 py-1.5 rounded-full text-xs transition-all font-medium ${
                     activeId === spot.id
                       ? 'bg-[var(--foreground)] text-[var(--background)] shadow-sm'
                       : 'bg-[var(--card)] text-[var(--muted)] hover:text-[var(--foreground)] border border-[var(--border)]'
@@ -212,79 +214,79 @@ export function BeautyAnatomyCanvas() {
           </div>
 
           {/* RIGHT: Active Zone Specification & Formulation Breakdown */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="p-8 rounded-3xl bg-[var(--card)] border border-[var(--border)] shadow-xl relative overflow-hidden space-y-6">
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
+            <div className="p-8 rounded-3xl bg-[var(--card)] border border-[var(--border)] shadow-xl relative overflow-hidden space-y-6 flex-1 flex flex-col justify-between">
               {/* Ambient gold glow */}
               <div className="absolute -top-12 -right-12 w-40 h-40 bg-[var(--accent)]/15 rounded-full blur-2xl pointer-events-none" />
 
-              {/* Header with tool vector icon */}
-              <div className="flex items-start justify-between gap-4">
-                <div className="space-y-1">
-                  <span className="text-[11px] tracking-ultra-wide uppercase font-semibold text-[var(--accent)] block">
-                    {activeSpot.zone}
-                  </span>
-                  <h3 className="font-serif text-2xl sm:text-3xl text-[var(--foreground)]">
-                    {activeSpot.name}
-                  </h3>
+              <div className="space-y-6">
+                {/* Header with tool vector icon */}
+                <div className="flex items-start justify-between gap-4">
+                  <div className="space-y-1">
+                    <span className="text-[11px] tracking-ultra-wide uppercase font-semibold text-[var(--accent)] block">
+                      {activeSpot.zone}
+                    </span>
+                    <h3 className="font-serif text-2xl sm:text-3xl text-[var(--foreground)]">
+                      {activeSpot.name}
+                    </h3>
+                  </div>
+
+                  <div className="p-3 rounded-2xl bg-[var(--background)] border border-[var(--border)] shrink-0 shadow-inner">
+                    {renderToolIcon(activeSpot.toolType)}
+                  </div>
                 </div>
 
-                <div className="p-3 rounded-2xl bg-[var(--background)] border border-[var(--border)] shrink-0 shadow-inner">
-                  {renderToolIcon(activeSpot.toolType)}
-                </div>
-              </div>
-
-              {/* Technique Description */}
-              <div className="space-y-2">
-                <span className="text-[10px] tracking-widest uppercase font-mono text-[var(--muted)]">
-                  The Artist’s Technique
-                </span>
-                <p className="text-sm text-[var(--foreground)] leading-relaxed">
-                  {activeSpot.technique}
-                </p>
-              </div>
-
-              {/* Two-Column Specification */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="p-3.5 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-1">
-                  <span className="text-[10px] tracking-widest uppercase text-[var(--accent)] font-semibold block">
-                    Essential Tool
+                {/* Technique Description */}
+                <div className="space-y-2">
+                  <span className="text-[10px] tracking-widest uppercase font-mono text-[var(--muted)]">
+                    The Artist’s Technique
                   </span>
-                  <p className="text-xs text-[var(--foreground)] font-medium leading-snug">
-                    {activeSpot.toolName}
+                  <p className="text-sm text-[var(--foreground)] leading-relaxed">
+                    {activeSpot.technique}
                   </p>
                 </div>
 
-                <div className="p-3.5 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-1">
-                  <span className="text-[10px] tracking-widest uppercase text-[var(--accent)] font-semibold block">
-                    Formula Placement
-                  </span>
-                  <p className="text-xs text-[var(--foreground)] font-medium leading-snug">
-                    {activeSpot.formula}
+                {/* Two-Column Specification */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="p-3.5 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-1">
+                    <span className="text-[10px] tracking-widest uppercase text-[var(--accent)] font-semibold block">
+                      Essential Tool
+                    </span>
+                    <p className="text-xs text-[var(--foreground)] font-medium leading-snug">
+                      {activeSpot.toolName}
+                    </p>
+                  </div>
+
+                  <div className="p-3.5 rounded-xl bg-[var(--background)] border border-[var(--border)] space-y-1">
+                    <span className="text-[10px] tracking-widest uppercase text-[var(--accent)] font-semibold block">
+                      Formula Placement
+                    </span>
+                    <p className="text-xs text-[var(--foreground)] font-medium leading-snug">
+                      {activeSpot.formula}
+                    </p>
+                  </div>
+                </div>
+
+                {/* The Wedding Day Advantage Card - Well-Formatted & Elegant */}
+                <div className="p-4 sm:p-5 rounded-2xl bg-[var(--accent)]/10 border border-[var(--accent)]/25 space-y-2">
+                  <div className="flex items-center space-x-2 text-[11px] tracking-ultra-wide uppercase font-semibold text-[var(--accent)]">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span>The Wedding Day Advantage</span>
+                  </div>
+                  <p className="font-serif text-sm sm:text-base italic text-[var(--foreground)] leading-relaxed pl-1">
+                    “{activeSpot.clientBenefit}”
                   </p>
                 </div>
               </div>
 
-              {/* Client Benefit */}
-              <div className="flex items-start space-x-3 p-4 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/20 text-xs">
-                <CheckCircle2 className="w-4 h-4 text-[var(--accent)] shrink-0 mt-0.5" />
-                <div className="space-y-0.5">
-                  <span className="font-semibold text-[var(--foreground)] block">
-                    The Wedding Day Advantage:
-                  </span>
-                  <p className="text-[var(--muted)]">
-                    {activeSpot.clientBenefit}
-                  </p>
-                </div>
-              </div>
-
-              {/* CTA link */}
+              {/* Clean, Well-Formatted Consultation Button */}
               <div className="pt-2">
                 <Link
                   href="/enquire"
-                  className="w-full flex items-center justify-center space-x-2 px-6 py-3.5 rounded-full bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--accent)] hover:text-black text-xs tracking-luxury uppercase font-medium transition-colors shadow-md"
+                  className="w-full flex items-center justify-center space-x-2 px-6 py-4 rounded-full bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--accent)] hover:text-black text-xs sm:text-sm tracking-luxury uppercase font-semibold transition-all shadow-md hover:shadow-xl text-center group"
                 >
-                  <span>Request Custom Consultation for Your Facial Architecture</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  <span>Book Facial Architecture Consultation</span>
+                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Link>
               </div>
             </div>

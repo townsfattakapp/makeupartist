@@ -342,7 +342,7 @@ export const repository = {
       mediaUrl: postData.mediaUrl,
       mediaType: postData.mediaType || 'VIDEO',
       caption: postData.caption,
-      permalink: postData.permalink || 'https://instagram.com/aurelialuxemakeup',
+      permalink: postData.permalink || 'https://instagram.com/kumkumpatelmakeup',
       likesCount: postData.likesCount || 1000,
       isFeatured: postData.isFeatured ?? true,
       displayOrder: postData.displayOrder ?? globalStore.instagramPosts.length + 1,

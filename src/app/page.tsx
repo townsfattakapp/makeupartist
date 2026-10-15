@@ -86,23 +86,28 @@ export default async function HomePage() {
               </Link>
             </div>
 
-            {/* Tactile Makeup Highlights Strip */}
-            <div className="pt-10 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs tracking-luxury uppercase text-white/80 border-t border-white/15 max-w-4xl mx-auto font-medium">
-              <div className="flex items-center justify-center space-x-1.5">
-                <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
-                <span>45-Min Lymphatic Prep</span>
-              </div>
-              <div className="flex items-center justify-center space-x-1.5">
-                <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
-                <span>16-Hour Tear-Proof Finish</span>
-              </div>
-              <div className="flex items-center justify-center space-x-1.5">
-                <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
-                <span>Prestige Clean Kit</span>
-              </div>
-              <div className="flex items-center justify-center space-x-1.5">
-                <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
-                <span>Single Client Dedication</span>
+            {/* Tactile Makeup Highlights Strip - Single Line Luxury Ribbon */}
+            <div className="pt-10 flex justify-center w-full">
+              <div className="inline-flex items-center space-x-3 sm:space-x-5 px-5 sm:px-8 py-2.5 rounded-full bg-black/45 backdrop-blur-md border border-white/20 text-[11px] sm:text-xs tracking-luxury uppercase text-white/95 font-medium whitespace-nowrap overflow-x-auto max-w-full shadow-lg">
+                <div className="flex items-center space-x-2 shrink-0">
+                  <span className="w-2 h-2 rounded-full bg-[var(--accent)] shadow-xs shadow-[var(--accent)]" />
+                  <span>45-Min Lymphatic Prep</span>
+                </div>
+                <span className="text-white/30 shrink-0">•</span>
+                <div className="flex items-center space-x-2 shrink-0">
+                  <span className="w-2 h-2 rounded-full bg-[var(--accent)] shadow-xs shadow-[var(--accent)]" />
+                  <span>16-Hour Tear-Proof Finish</span>
+                </div>
+                <span className="text-white/30 shrink-0">•</span>
+                <div className="flex items-center space-x-2 shrink-0">
+                  <span className="w-2 h-2 rounded-full bg-[var(--accent)] shadow-xs shadow-[var(--accent)]" />
+                  <span>Prestige Clean Kit</span>
+                </div>
+                <span className="text-white/30 shrink-0">•</span>
+                <div className="flex items-center space-x-2 shrink-0">
+                  <span className="w-2 h-2 rounded-full bg-[var(--accent)] shadow-xs shadow-[var(--accent)]" />
+                  <span>Single Client Dedication</span>
+                </div>
               </div>
             </div>
           </div>
@@ -235,7 +240,7 @@ export default async function HomePage() {
                 <div className="relative aspect-3/4 rounded-2xl overflow-hidden border border-[var(--border)] shadow-xl">
                   <Image
                     src="/assets/8cefb0245c79153f745fc34d21844435.jpg"
-                    alt="Aurelia Vance, Founder and Lead Artist"
+                    alt="Kumkum Patel, Founder and Lead Artist"
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="object-cover"
@@ -258,10 +263,10 @@ export default async function HomePage() {
                 </h2>
                 <div className="space-y-4 text-sm text-[var(--muted)] leading-relaxed">
                   <p>
-                    Trained in classical portrait painting at the Courtauld Institute before mastering backstage couture at Paris and London fashion weeks, Aurelia Vance brings an architect’s understanding of facial symmetry and a painter’s sensitivity to light.
+                    Trained in classical portrait painting before mastering backstage couture across premier bridal fashion weeks, Kumkum Patel brings an architect’s understanding of facial symmetry and a painter’s sensitivity to light.
                   </p>
                   <p>
-                    Rather than imposing a signature template onto every face, Aurelia listens attentively to your personal aesthetic, wedding gown neckline, and the venue’s ambient illumination to design a bespoke look that feels authentically and effortlessly you.
+                    Rather than imposing a signature template onto every face, Kumkum listens attentively to your personal aesthetic, wedding gown neckline, and the venue’s ambient illumination to design a bespoke look that feels authentically and effortlessly you.
                   </p>
                 </div>
 
@@ -299,7 +304,7 @@ export default async function HomePage() {
           <SectionHeading
             badge="Client Voices"
             title="Editorial & Bridal Acclaim"
-            subtitle="Realistic sample reflections from brides and directors experiencing the Aurelia Luxe accompaniment."
+            subtitle="Realistic sample reflections from brides and directors experiencing the Kumkum Patel accompaniment."
             centered
             className="mb-16"
           />

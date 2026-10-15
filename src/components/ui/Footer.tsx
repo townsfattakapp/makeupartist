@@ -10,19 +10,19 @@ export function Footer() {
           {/* Brand & Statement */}
           <div className="lg:col-span-2 space-y-4">
             <span className="font-serif text-3xl tracking-widest font-medium block">
-              AURELIA LUXE
+              KUMKUM PATEL
             </span>
             <p className="text-xs tracking-luxury uppercase text-[var(--accent)] font-medium">
               Haute Bridal & Editorial Makeup Artistry
             </p>
             <p className="text-sm text-[var(--muted)] leading-relaxed max-w-sm pt-2">
-              Unrivalled glass-skin architecture, quiet luxury aesthetics, and dedicated wedding day accompaniment across London, the English countryside, and Europe’s finest destination venues.
+              Unrivalled glass-skin architecture, quiet luxury aesthetics, and dedicated wedding day accompaniment across luxury venues and global destination celebrations.
             </p>
             
             {/* Concierge Actions */}
             <div className="pt-2 flex flex-wrap gap-3">
               <a
-                href="https://wa.me/447946091200?text=Hello%20Aurelia%20Luxe,%20I%20would%20like%20to%20check%20availability%20for%20my%20event."
+                href="https://wa.me/919876543210?text=Hello%20Kumkum%20Patel,%20I%20would%20like%20to%20check%20availability%20for%20my%20event."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-[var(--border)] bg-[var(--background)] hover:border-[var(--accent)] text-xs tracking-wide transition-all duration-300"
@@ -31,13 +31,13 @@ export function Footer() {
                 <span>WhatsApp Concierge</span>
               </a>
               <a
-                href="https://instagram.com/aurelialuxemakeup"
+                href="https://instagram.com/kumkumpatelmakeup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-[var(--border)] bg-[var(--background)] hover:border-[var(--accent)] text-xs tracking-wide transition-all duration-300"
               >
                 <InstagramIcon className="w-3.5 h-3.5 text-pink-600 dark:text-pink-400" />
-                <span>@aurelialuxemakeup</span>
+                <span>@kumkumpatelmakeup</span>
                 <ArrowUpRight className="w-3 h-3 text-[var(--muted)]" />
               </a>
             </div>
@@ -118,13 +118,13 @@ export function Footer() {
               Studio Inquiries
             </h3>
             <div className="text-sm text-[var(--muted)] space-y-3">
-              <a href="mailto:concierge@aurelialuxe.com" className="flex items-center space-x-2 hover:text-[var(--accent)] transition-colors">
+              <a href="mailto:concierge@kumkumpatel.com" className="flex items-center space-x-2 hover:text-[var(--accent)] transition-colors">
                 <Mail className="w-3.5 h-3.5 text-[var(--accent)]" />
-                <span>concierge@aurelialuxe.com</span>
+                <span>concierge@kumkumpatel.com</span>
               </a>
-              <a href="tel:+442079460912" className="flex items-center space-x-2 hover:text-[var(--accent)] transition-colors">
+              <a href="tel:+919876543210" className="flex items-center space-x-2 hover:text-[var(--accent)] transition-colors">
                 <Phone className="w-3.5 h-3.5 text-[var(--accent)]" />
-                <span>+44 (0) 20 7946 0912</span>
+                <span>+91 98765 43210</span>
               </a>
               <p className="text-xs text-[var(--muted)] pt-2 leading-relaxed">
                 Response guarantee: Within 24 business hours for all date enquiries.
@@ -148,7 +148,7 @@ export function Footer() {
             <Link href="/terms" className="hover:text-[var(--foreground)] transition-colors">
               Terms & Booking Policy
             </Link>
-            <span>© 2026 Aurelia Luxe Artistry. All Rights Reserved.</span>
+            <span>© 2026 Kumkum Patel Artistry. All Rights Reserved.</span>
           </div>
         </div>
       </div>

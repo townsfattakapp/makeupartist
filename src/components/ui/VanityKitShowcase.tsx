@@ -75,7 +75,7 @@ export function VanityKitShowcase() {
               Prestige Formulas Behind The Glow
             </h2>
             <p className="text-sm text-[var(--muted)] max-w-2xl leading-relaxed">
-              We never cut corners with high-street cosmetics. Every bottle, pigment, and cream in Aurelia’s mobile trunk is hand-selected from the world’s leading dermatological and luxury beauty houses.
+              We never cut corners with high-street cosmetics. Every bottle, pigment, and cream in Kumkum’s mobile trunk is hand-selected from the world’s leading dermatological and luxury beauty houses.
             </p>
           </div>
 

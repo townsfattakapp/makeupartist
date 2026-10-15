@@ -41,10 +41,10 @@ export default function AdminLoginPage() {
 
   const handleFillDemo = (role: 'OWNER' | 'EDITOR') => {
     if (role === 'OWNER') {
-      setEmail('aurelia@aurelialuxe.com');
+      setEmail('kumkum@kumkumpatel.com');
       setPassword('LuxeOwner2026!');
     } else {
-      setEmail('assistant@aurelialuxe.com');
+      setEmail('assistant@kumkumpatel.com');
       setPassword('LuxeStudio2026!');
     }
     setErrorMsg('');
@@ -54,7 +54,7 @@ export default function AdminLoginPage() {
     <div className="min-h-screen flex flex-col justify-between bg-[var(--background)] text-[var(--foreground)] p-6">
       <div className="flex items-center justify-between max-w-5xl mx-auto w-full pt-4">
         <Link href="/" className="font-serif text-2xl tracking-widest text-[var(--foreground)] hover:text-[var(--accent)] transition-colors">
-          AURELIA LUXE
+          KUMKUM PATEL
         </Link>
         <ThemeToggle />
       </div>
@@ -94,7 +94,7 @@ export default function AdminLoginPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="artist@aurelialuxe.com"
+                  placeholder="artist@kumkumpatel.com"
                   className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--background)] text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)]"
                 />
               </div>
@@ -142,7 +142,7 @@ export default function AdminLoginPage() {
                   <UserCheck className="w-3.5 h-3.5 text-[var(--accent)]" />
                   <span>Owner</span>
                 </div>
-                <div className="text-[10px] text-[var(--muted)]">Aurelia Vance (Full)</div>
+                <div className="text-[10px] text-[var(--muted)]">Kumkum Patel (Full)</div>
               </button>
 
               <button
@@ -154,7 +154,7 @@ export default function AdminLoginPage() {
                   <UserCheck className="w-3.5 h-3.5 text-blue-500" />
                   <span>Editor</span>
                 </div>
-                <div className="text-[10px] text-[var(--muted)]">Clara (Assistant)</div>
+                <div className="text-[10px] text-[var(--muted)]">Studio Assistant</div>
               </button>
             </div>
           </div>

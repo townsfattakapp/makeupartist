@@ -26,7 +26,7 @@ export function ServicesManager({
       category: 'Bridal',
       shortDescription: '',
       fullDescription: '',
-      priceIndicative: '£500',
+      priceIndicative: '₹25,000',
       priceType: 'STARTING_AT',
       durationMinutes: 90,
       inclusions: ['Luxury skin preparation', 'Individual lash architecture', 'Touch-up formulation kit'],
@@ -209,7 +209,7 @@ export function ServicesManager({
                     required
                     value={editingService.priceIndicative || ''}
                     onChange={(e) => setEditingService({ ...editingService, priceIndicative: e.target.value })}
-                    placeholder="e.g. £750 or Enquire"
+                    placeholder="e.g. ₹45,000 or Enquire"
                     className="w-full px-3.5 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--background)] text-xs font-mono"
                   />
                 </div>

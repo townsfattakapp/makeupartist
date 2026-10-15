@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
       guestsCount: Number(guestsCount) || 1,
       serviceId: body.serviceId,
       aestheticNotes: body.aestheticNotes || '',
-      budgetRange: body.budgetRange || '£1,000 - £2,000',
+      budgetRange: body.budgetRange || '₹25,000 - ₹50,000',
       referenceImageUrl: body.referenceImageUrl,
     });
 
