@@ -7,10 +7,6 @@ import { Footer } from '@/components/ui/Footer';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { LookCard } from '@/components/ui/LookCard';
 import { InstagramSection } from '@/components/ui/InstagramSection';
-import { TransformationSpotlight } from '@/components/ui/TransformationSpotlight';
-import { VanityKitShowcase } from '@/components/ui/VanityKitShowcase';
-import { AestheticQuiz } from '@/components/ui/AestheticQuiz';
-import { CosmeticSwatches } from '@/components/ui/CosmeticSwatches';
 import { BeautyAnatomyCanvas } from '@/components/ui/BeautyAnatomyCanvas';
 
 export default async function HomePage() {
@@ -136,29 +132,8 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* PROMINENT BEFORE / AFTER TRANSFORMATION SPOTLIGHT */}
-        <TransformationSpotlight />
-
         {/* INTERACTIVE FACE CHART: ANATOMY OF HAUTE ARTISTRY (VECTOR ART) */}
         <BeautyAnatomyCanvas />
-
-        {/* INTERACTIVE BRIDAL & EVENT AESTHETIC QUIZ */}
-        <section className="py-14 sm:py-24 max-w-7xl mx-auto px-4 sm:px-8">
-          <SectionHeading
-            badge="The Aesthetic Matcher"
-            title="Discover Your Signature Bridal Style"
-            subtitle="Take our 60-second interactive consultation to match your wedding gown silhouette, venue lighting, and personal comfort level with a tailored makeup architecture."
-            centered
-            className="mb-10 sm:mb-12"
-          />
-
-          <AestheticQuiz />
-        </section>
-
-        {/* THE COUTURE COLOR BAR (SWATCHES & FORMULATION DETAILS) */}
-        <section className="py-12 sm:py-16 max-w-7xl mx-auto px-4 sm:px-8">
-          <CosmeticSwatches />
-        </section>
 
         {/* CURATED PORTFOLIO ARCHIVES */}
         <section className="py-14 sm:py-24 max-w-7xl mx-auto px-4 sm:px-8">
@@ -177,9 +152,6 @@ export default async function HomePage() {
             ))}
           </div>
         </section>
-
-        {/* INSIDE THE LUXURY VANITY KIT (BRANDS & HYGIENE) */}
-        <VanityKitShowcase />
 
         {/* SIGNATURE SERVICES & EXPERIENCES */}
         <section className="py-14 sm:py-24 max-w-7xl mx-auto px-4 sm:px-8">
