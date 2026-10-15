@@ -30,7 +30,7 @@ const BEAUTY_HOTSPOTS: Hotspot[] = [
     id: 'brows',
     name: 'Feathered Brow Architecture',
     zone: 'Upper Orbital Bone',
-    xPercent: 35,
+    xPercent: 59,
     yPercent: 36,
     technique: 'Individual directional micro-strokes mimicking natural hair growth to lift the brow arch without a stamped or harsh look.',
     toolName: 'Ultra-Fine Japanese Angled Definer',
@@ -42,8 +42,8 @@ const BEAUTY_HOTSPOTS: Hotspot[] = [
     id: 'eyes',
     name: 'Editorial Wing & Flutter Lashes',
     zone: 'Ciliary Margin & Outer Crease',
-    xPercent: 33,
-    yPercent: 42,
+    xPercent: 40.5,
+    yPercent: 42.5,
     technique: 'Soft diffused smoked silk liner paired with weightless individual lash clusters graduated toward outer corners for an eye-lengthening feline lift.',
     toolName: 'Ergonomic Precision Lash Curler',
     toolType: 'curler',
@@ -54,8 +54,8 @@ const BEAUTY_HOTSPOTS: Hotspot[] = [
     id: 'cheeks',
     name: 'Candlelight High-Point Glow',
     zone: 'Zygomatic Arch & Temples',
-    xPercent: 31,
-    yPercent: 51,
+    xPercent: 34,
+    yPercent: 51.5,
     technique: 'Seamless blending of liquid pearl strobe melted over highest points of cheekbones, capturing natural and flash lighting.',
     toolName: 'Dual-Fiber Fan Stippling Brush',
     toolType: 'brush',
@@ -66,8 +66,8 @@ const BEAUTY_HOTSPOTS: Hotspot[] = [
     id: 'complexion',
     name: 'Sub-Dermal Glass Skin Prep',
     zone: 'Facial Canvas & Bridge',
-    xPercent: 48,
-    yPercent: 56,
+    xPercent: 66,
+    yPercent: 51.5,
     technique: 'Lymphatic drainage massage with warm rose quartz followed by multi-molecular hydration serum to plump skin cells before foundation.',
     toolName: 'Cellular Skincare Pipette & Sculpting Tool',
     toolType: 'dropper',
@@ -79,7 +79,7 @@ const BEAUTY_HOTSPOTS: Hotspot[] = [
     name: 'Satin Velvet Lip Architecture',
     zone: 'Cupid’s Bow & Lip Vermilion',
     xPercent: 50,
-    yPercent: 67,
+    yPercent: 66,
     technique: 'Strategic micro-overlining at the center lobes with contoured shading at mouth corners for a plump, camera-ready finish.',
     toolName: 'Chiseled Gold Bullet & Flat Definer',
     toolType: 'lipstick',
@@ -154,45 +154,50 @@ export function BeautyAnatomyCanvas() {
               </div>
 
               {/* The SVG Line Art Face */}
-              <div className="relative flex-1 w-full flex items-center justify-center py-4">
-                <FaceChartVector className="w-full h-auto max-h-[460px]" activeHotspot={activeId} />
+              <div className="relative flex-1 w-full flex items-center justify-center py-2 sm:py-4">
+                {/* 5:6 Canvas Frame geometrically locked to SVG dimensions */}
+                <div className="relative w-full max-w-[340px] sm:max-w-[400px] aspect-[5/6] mx-auto flex items-center justify-center">
+                  <FaceChartVector className="w-full h-full object-contain pointer-events-none" activeHotspot={activeId} />
 
-                {/* Interactive Vector Hotspot Pins */}
-                {BEAUTY_HOTSPOTS.map((spot) => {
-                  const isSelected = spot.id === activeId;
-                  return (
-                    <button
-                      key={spot.id}
-                      onClick={() => setActiveId(spot.id)}
-                      style={{ left: `${spot.xPercent}%`, top: `${spot.yPercent}%` }}
-                      className={`absolute -translate-x-1/2 -translate-y-1/2 group transition-all duration-300 focus:outline-none z-10 ${
-                        isSelected ? 'scale-125' : 'hover:scale-110'
-                      }`}
-                      title={spot.name}
-                    >
-                      <span className="relative flex h-8 w-8 items-center justify-center">
-                        {/* Outer ripple ring */}
-                        <span
-                          className={`absolute inline-flex h-full w-full rounded-full transition-opacity ${
-                            isSelected
-                              ? 'animate-ping bg-[var(--accent)] opacity-75'
-                              : 'bg-[var(--accent)] opacity-30 group-hover:opacity-60'
-                          }`}
-                        />
-                        {/* Inner metallic button */}
-                        <span
-                          className={`relative inline-flex items-center justify-center rounded-full h-5 w-5 text-[10px] font-bold border transition-colors ${
-                            isSelected
-                              ? 'bg-[var(--foreground)] text-[var(--background)] border-[var(--accent)] shadow-md shadow-[var(--accent)]/40'
-                              : 'bg-[var(--card)] text-[var(--foreground)] border-[var(--accent)] hover:bg-[var(--accent)] hover:text-black'
-                          }`}
-                        >
-                          +
+                  {/* Interactive Vector Hotspot Pins - Precision Symmetrically Placed */}
+                  {BEAUTY_HOTSPOTS.map((spot) => {
+                    const isSelected = spot.id === activeId;
+                    return (
+                      <button
+                        key={spot.id}
+                        type="button"
+                        onClick={() => setActiveId(spot.id)}
+                        style={{ left: `${spot.xPercent}%`, top: `${spot.yPercent}%` }}
+                        className={`absolute -translate-x-1/2 -translate-y-1/2 group transition-all duration-300 focus:outline-none z-10 cursor-pointer ${
+                          isSelected ? 'scale-125 z-20' : 'hover:scale-115'
+                        }`}
+                        title={spot.name}
+                        aria-label={spot.name}
+                      >
+                        <span className="relative flex h-8 w-8 items-center justify-center">
+                          {/* Luminous Pulsing Glow */}
+                          <span
+                            className={`absolute inline-flex h-full w-full rounded-full transition-all duration-500 ${
+                              isSelected
+                                ? 'animate-ping bg-[var(--accent)] opacity-70'
+                                : 'bg-[var(--accent)]/30 opacity-30 group-hover:opacity-75 group-hover:scale-110'
+                            }`}
+                          />
+                          {/* Couture Gold Coin Pin */}
+                          <span
+                            className={`relative inline-flex items-center justify-center rounded-full h-5.5 w-5.5 text-[10px] font-bold transition-all duration-300 shadow-md ${
+                              isSelected
+                                ? 'bg-gradient-to-tr from-[#C5A880] to-[#FAF8F5] text-black border-2 border-white shadow-lg shadow-[var(--accent)]/60 scale-105 ring-2 ring-[var(--accent)]'
+                                : 'bg-black/85 text-[var(--accent)] border border-[var(--accent)]/80 group-hover:bg-[var(--accent)] group-hover:text-black'
+                            }`}
+                          >
+                            +
+                          </span>
                         </span>
-                      </span>
-                    </button>
-                  );
-                })}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
               {/* Bottom Instructions strip */}
