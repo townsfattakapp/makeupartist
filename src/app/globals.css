@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #FAF8F5;
+    --background-subtle: #F4EFE6;
+    --card: #FFFFFF;
+    --card-foreground: #121212;
+    --foreground: #121212;
+    --muted: #66615B;
+    --border: #E8E2D8;
+    --border-subtle: #F0EAE1;
+    --accent: #C5A880;
+    --accent-hover: #B39369;
+    --accent-light: #F7F1E8;
+    --gold: #D4AF37;
+    --gold-glow: rgba(212, 175, 55, 0.15);
+  }
+
+  .dark {
+    --background: #0C0C0D;
+    --background-subtle: #141416;
+    --card: #18181B;
+    --card-foreground: #F7F5F0;
+    --foreground: #F7F5F0;
+    --muted: #A19E95;
+    --border: #27272A;
+    --border-subtle: #1F1F23;
+    --accent: #E0C392;
+    --accent-hover: #ECCFA0;
+    --accent-light: rgba(224, 195, 146, 0.08);
+    --gold: #D4AF37;
+    --gold-glow: rgba(212, 175, 55, 0.2);
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, .font-serif, .font-editorial {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+/* Luxury custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 9999px;
+}
+
+/* Editorial letterspacing utilities */
+.tracking-luxury {
+  letter-spacing: 0.18em;
+}
+.tracking-ultra-wide {
+  letter-spacing: 0.25em;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
