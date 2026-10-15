@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Sparkles, ArrowRight, ArrowUpRight, RotateCcw, CheckCircle2, Heart } from 'lucide-react';
+import { Compass, ArrowRight, ArrowUpRight, RotateCcw, CheckCircle2, Heart } from 'lucide-react';
 
 interface Question {
   id: number;
@@ -198,7 +198,7 @@ export function AestheticQuiz() {
       {/* Quiz Top Header */}
       <div className="flex items-center justify-between border-b border-[var(--border)] pb-3 sm:pb-4 gap-2">
         <div className="flex items-center space-x-1.5 sm:space-x-2 text-[10px] sm:text-xs tracking-wider sm:tracking-ultra-wide uppercase font-semibold text-[var(--accent)]">
-          <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+          <Compass className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
           <span>Interactive Beauty Concierge</span>
         </div>
 

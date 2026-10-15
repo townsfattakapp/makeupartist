@@ -1,4 +1,4 @@
-import { Sparkles, ShieldCheck, Heart, Droplets, Feather, Eye } from 'lucide-react';
+import { Award, ShieldCheck, Heart, Droplets, Feather, Eye } from 'lucide-react';
 
 interface KitItem {
   brand: string;
@@ -23,7 +23,7 @@ const PRESTIGE_KIT_ITEMS: KitItem[] = [
     productName: 'Hollywood Flawless Filter Complex',
     role: 'Luminescent Youth Glow',
     benefit: 'Finely-milled airbrush polymers that smooth pores and bounce candlelight illumination across cheekbones.',
-    icon: Sparkles,
+    icon: Award,
     finish: 'High-Point Radiance',
   },
   {
@@ -68,7 +68,7 @@ export function VanityKitShowcase() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2">
             <span className="text-[11px] sm:text-xs tracking-wider sm:tracking-ultra-wide uppercase font-semibold text-[var(--accent)] flex items-center space-x-1.5">
-              <Sparkles className="w-3.5 h-3.5" />
+              <Award className="w-3.5 h-3.5" />
               <span>The Professional Vanity Kit</span>
             </span>
             <h2 className="font-serif text-2xl sm:text-4xl text-[var(--foreground)]">

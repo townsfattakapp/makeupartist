@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, ArrowUpRight, Clock, Check, Sparkles, MapPin, Calendar, HeartHandshake, ShieldCheck } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Clock, Check, MapPin, Calendar, HeartHandshake, ShieldCheck } from 'lucide-react';
 import { repository } from '@/lib/db/repository';
 import { Header } from '@/components/ui/Header';
 import { Footer } from '@/components/ui/Footer';
@@ -121,7 +121,7 @@ export default async function ServiceDetailPage({ params }: ServiceDetailPagePro
               {service.preparationGuide && (
                 <div className="p-6 rounded-2xl bg-[var(--background-subtle)] border border-[var(--border)] space-y-3">
                   <h3 className="text-xs tracking-ultra-wide uppercase font-semibold text-[var(--foreground)] flex items-center space-x-2">
-                    <Sparkles className="w-3.5 h-3.5 text-[var(--accent)]" />
+                    <Check className="w-3.5 h-3.5 text-[var(--accent)]" />
                     <span>Client Preparation Guidance</span>
                   </h3>
                   <p className="text-xs text-[var(--muted)] leading-relaxed whitespace-pre-line">

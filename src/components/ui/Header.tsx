@@ -3,7 +3,7 @@
 import * as React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Compass } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 
 const NAV_LINKS = [
@@ -107,7 +107,7 @@ export function Header() {
         <div className="md:hidden fixed inset-0 top-[65px] bg-[var(--background)] z-40 px-6 py-8 flex flex-col justify-between border-t border-[var(--border)] overflow-y-auto">
           <div className="flex flex-col space-y-6 pt-4">
             <div className="text-[11px] tracking-ultra-wide uppercase text-[var(--muted)] flex items-center space-x-1.5">
-              <Sparkles className="w-3.5 h-3.5 text-[var(--accent)]" />
+              <Compass className="w-3.5 h-3.5 text-[var(--accent)]" />
               <span>Editorial Navigation</span>
             </div>
             {NAV_LINKS.map((link) => (

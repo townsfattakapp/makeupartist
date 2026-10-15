@@ -195,18 +195,6 @@ export function FaceChartVector({ className = 'w-full h-auto', activeHotspot }: 
         {/* Jaw contour line */}
         <path d="M175 390C210 430 250 435 250 435C250 435 290 430 325 390" />
       </g>
-
-      {/* CELESTIAL STARDUST / SPARKLE VECTORS */}
-      <g fill="url(#goldStrokeGrad)">
-        {/* Star 1 - High Cheekbone */}
-        <path d="M150 280 Q150 290 140 290 Q150 290 150 300 Q150 290 160 290 Q150 290 150 280Z" opacity="0.8" />
-        {/* Star 2 - Brow Bone */}
-        <path d="M330 210 Q330 218 322 218 Q330 218 330 226 Q330 218 338 218 Q330 218 330 210Z" opacity="0.7" />
-        {/* Star 3 - Inner Eye */}
-        <path d="M240 248 Q240 253 235 253 Q240 253 240 258 Q240 253 245 253 Q240 253 240 248Z" opacity="0.9" />
-        {/* Star 4 - Floating Accent */}
-        <path d="M380 160 Q380 170 370 170 Q380 170 380 180 Q380 170 390 170 Q380 170 380 160Z" opacity="0.5" />
-      </g>
     </svg>
   );
 }
@@ -350,41 +338,8 @@ export function LashCurlerVector({ className = 'w-12 h-12' }: { className?: stri
 }
 
 /**
- * 6. Ambient Floating Cosmetic Swirl & Sparkle Backdrop
+ * 6. Ambient Floating Cosmetic Swirl & Sparkle Backdrop (Purged to avoid AI watermark perception)
  */
-export function FloatingBeautyAccents({ className = 'absolute inset-0 pointer-events-none overflow-hidden' }: { className?: string }) {
-  return (
-    <div className={className} aria-hidden="true">
-      <svg className="w-full h-full opacity-20 dark:opacity-30" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="accentSwirl" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#DFC39C" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#C5A880" stopOpacity="0.05" />
-          </linearGradient>
-        </defs>
-
-        {/* Fluid Organic Cosmetic Ribbon Curves */}
-        <path
-          d="M-100 200C150 100 300 450 600 350C900 250 1050 500 1300 400"
-          stroke="url(#accentSwirl)"
-          strokeWidth="1.5"
-          strokeDasharray="6 6"
-        />
-        <path
-          d="M-50 400C250 550 450 200 750 300C1050 400 1150 150 1350 250"
-          stroke="url(#accentSwirl)"
-          strokeWidth="1"
-          opacity="0.6"
-        />
-
-        {/* Couture 4-Point Star Sparkles */}
-        <g fill="#DFC39C">
-          <path d="M200 150 Q200 165 185 165 Q200 165 200 180 Q200 165 215 165 Q200 165 200 150Z" opacity="0.5" />
-          <path d="M1000 220 Q1000 235 985 235 Q1000 235 1000 250 Q1000 235 1015 235 Q1000 235 1000 220Z" opacity="0.6" />
-          <path d="M850 600 Q850 612 838 612 Q850 612 850 624 Q850 612 862 612 Q850 612 850 600Z" opacity="0.4" />
-          <path d="M350 680 Q350 690 340 690 Q350 690 350 700 Q350 690 360 690 Q350 690 350 680Z" opacity="0.5" />
-        </g>
-      </svg>
-    </div>
-  );
+export function FloatingBeautyAccents({ className = '' }: { className?: string }) {
+  return null;
 }

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUpRight, Sparkles } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { PortfolioLook } from '@/types';
 
 interface LookCardProps {
@@ -30,8 +30,8 @@ export function LookCard({ look, priority = false }: LookCardProps) {
 
         {/* Floating Finish Badge */}
         <div className="absolute top-4 left-4 z-10">
-          <span className="inline-flex items-center space-x-1 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] tracking-wide text-white border border-white/15">
-            <Sparkles className="w-2.5 h-2.5 text-[var(--accent)]" />
+          <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] tracking-wide text-white border border-white/15">
+            <span className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shrink-0" />
             <span>{look.finishType}</span>
           </span>
         </div>

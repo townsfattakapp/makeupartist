@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUpRight, Sparkles, Award, ShieldCheck, Heart, Clock, Compass } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, Award, ShieldCheck, Heart, Clock, Compass } from 'lucide-react';
 import { Header } from '@/components/ui/Header';
 import { Footer } from '@/components/ui/Footer';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -85,7 +85,7 @@ export default async function AboutPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="p-5 rounded-xl bg-[var(--background-subtle)] border border-[var(--border)] space-y-2">
                     <div className="flex items-center space-x-2 text-xs font-semibold text-[var(--foreground)]">
-                      <Sparkles className="w-4 h-4 text-[var(--accent)]" />
+                      <CheckCircle2 className="w-4 h-4 text-[var(--accent)]" />
                       <span>The 45-Minute Prep Ritual</span>
                     </div>
                     <p className="text-xs text-[var(--muted)] leading-relaxed">

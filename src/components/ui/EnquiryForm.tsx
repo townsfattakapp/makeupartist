@@ -10,7 +10,6 @@ import {
   Clock, 
   MapPin, 
   Users, 
-  Sparkles, 
   ShieldCheck, 
   Send, 
   Copy, 

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, ArrowUpRight, Sparkles, CheckCircle2, ShieldCheck, Layers, Droplets } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Award, CheckCircle2, ShieldCheck, Layers, Droplets } from 'lucide-react';
 import { repository } from '@/lib/db/repository';
 import { Header } from '@/components/ui/Header';
 import { Footer } from '@/components/ui/Footer';
@@ -67,7 +67,7 @@ export default async function LookDetailPage({ params }: LookDetailPageProps) {
                 <div className="p-6 rounded-2xl bg-[var(--background-subtle)] border border-[var(--border)] space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-xs tracking-ultra-wide uppercase font-semibold text-[var(--accent)] flex items-center space-x-1.5">
-                      <Sparkles className="w-3.5 h-3.5" />
+                      <Award className="w-3.5 h-3.5" />
                       <span>Before / After Transformation</span>
                     </span>
                     <span className="text-[10px] text-[var(--muted)] flex items-center space-x-1">

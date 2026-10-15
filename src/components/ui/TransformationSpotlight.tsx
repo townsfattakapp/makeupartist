@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Sparkles, ShieldCheck, ArrowUpRight, Droplets, CheckCircle2 } from 'lucide-react';
+import { Award, ShieldCheck, ArrowUpRight, Droplets, CheckCircle2 } from 'lucide-react';
 import { BeforeAfterSlider } from './BeforeAfterSlider';
 
 export function TransformationSpotlight() {
@@ -9,7 +9,7 @@ export function TransformationSpotlight() {
         {/* Top Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <span className="text-[11px] sm:text-xs tracking-ultra-wide uppercase font-semibold text-[var(--accent)] flex items-center justify-center space-x-1.5">
-            <Sparkles className="w-3.5 h-3.5" />
+            <Award className="w-3.5 h-3.5" />
             <span>The Power of Bespoke Artistry</span>
           </span>
           <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-[var(--foreground)] leading-tight">

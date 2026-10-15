@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import Image from 'next/image';
-import { Sparkles, ArrowLeftRight } from 'lucide-react';
+import { CheckCircle2, ArrowLeftRight } from 'lucide-react';
 
 interface BeforeAfterSliderProps {
   beforeImage: string;
@@ -103,7 +103,7 @@ export function BeforeAfterSlider({
             priority
           />
           <div className="absolute top-4 right-4 z-10 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[11px] font-medium tracking-wide text-white border border-white/20 flex items-center space-x-1.5 pointer-events-none">
-            <Sparkles className="w-3 h-3 text-[var(--accent)]" />
+            <CheckCircle2 className="w-3 h-3 text-[var(--accent)]" />
             <span>{afterLabel}</span>
           </div>
         </div>

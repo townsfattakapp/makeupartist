@@ -2,14 +2,13 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Sparkles, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, CheckCircle2, Compass, Award } from 'lucide-react';
 import {
   FaceChartVector,
   MakeupBrushVector,
   LipstickVector,
   SerumDropperVector,
   LashCurlerVector,
-  FloatingBeautyAccents,
 } from './BeautyVectorArt';
 
 interface Hotspot {
@@ -109,14 +108,11 @@ export function BeautyAnatomyCanvas() {
 
   return (
     <section className="relative py-14 sm:py-24 bg-[var(--background)] border-b border-[var(--border)] overflow-hidden">
-      {/* Subtle vector backdrop curves */}
-      <FloatingBeautyAccents />
-
       <div className="relative max-w-7xl mx-auto px-4 sm:px-8 space-y-10 sm:space-y-16">
         {/* Section Title - Super Aligned & Crystal Clear */}
         <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4">
           <div className="inline-flex items-center space-x-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-[var(--accent)]/10 border border-[var(--accent)]/30 text-[var(--accent)] text-[11px] sm:text-xs tracking-wider sm:tracking-ultra-wide uppercase font-semibold">
-            <Sparkles className="w-3.5 h-3.5" />
+            <Compass className="w-3.5 h-3.5" />
             <span>The Artistry Face Chart</span>
           </div>
 
@@ -148,7 +144,7 @@ export function BeautyAnatomyCanvas() {
                 </div>
 
                 <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[var(--accent-light)] border border-[var(--accent)]/30 text-[10px] sm:text-[11px] tracking-wider uppercase text-[var(--accent)] font-semibold shadow-xs">
-                  <Sparkles className="w-3 h-3 text-[var(--accent)]" />
+                  <CheckCircle2 className="w-3 h-3 text-[var(--accent)]" />
                   <span>Interactive Anatomy</span>
                 </div>
               </div>
@@ -287,7 +283,7 @@ export function BeautyAnatomyCanvas() {
                 {/* The Wedding Day Advantage Card - Well-Formatted & Elegant */}
                 <div className="p-3.5 sm:p-5 rounded-xl sm:rounded-2xl bg-[var(--accent)]/10 border border-[var(--accent)]/25 space-y-2">
                   <div className="flex items-center space-x-2 text-[10px] sm:text-[11px] tracking-wider sm:tracking-ultra-wide uppercase font-semibold text-[var(--accent)]">
-                    <Sparkles className="w-3.5 h-3.5" />
+                    <Award className="w-3.5 h-3.5" />
                     <span>The Wedding Day Advantage</span>
                   </div>
                   <p className="font-serif text-xs sm:text-base italic text-[var(--foreground)] leading-relaxed pl-1">

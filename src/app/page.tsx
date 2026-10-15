@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, Sparkles, Star, Award, ShieldCheck, HeartHandshake, Compass, Palette, Droplets } from 'lucide-react';
+import { ArrowUpRight, Award, Star, ShieldCheck, HeartHandshake, Compass, Palette, Droplets } from 'lucide-react';
 import { repository } from '@/lib/db/repository';
 import { Header } from '@/components/ui/Header';
 import { Footer } from '@/components/ui/Footer';
@@ -12,13 +12,6 @@ import { VanityKitShowcase } from '@/components/ui/VanityKitShowcase';
 import { AestheticQuiz } from '@/components/ui/AestheticQuiz';
 import { CosmeticSwatches } from '@/components/ui/CosmeticSwatches';
 import { BeautyAnatomyCanvas } from '@/components/ui/BeautyAnatomyCanvas';
-import {
-  FloatingBeautyAccents,
-  MakeupBrushVector,
-  LipstickVector,
-  SerumDropperVector,
-  LashCurlerVector,
-} from '@/components/ui/BeautyVectorArt';
 
 export default async function HomePage() {
   const settings = await repository.getSettings();
@@ -47,13 +40,12 @@ export default async function HomePage() {
             {/* Elegant Editorial Vignette - Subtle & Warm, letting bridal glow shine through */}
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-black/40 to-black/60" />
             <div className="absolute inset-0 bg-radial-at-c from-transparent via-black/25 to-black/70" />
-            <FloatingBeautyAccents className="absolute inset-0 z-[1] pointer-events-none overflow-hidden opacity-35" />
           </div>
 
           {/* Hero Beauty Content */}
           <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-8 text-center text-white py-6 sm:py-10 space-y-6 sm:space-y-8 my-auto">
             <div className="inline-flex items-center space-x-2.5 px-4 sm:px-5 py-2 rounded-full bg-black/60 backdrop-blur-md border border-[var(--accent)]/40 text-[11px] sm:text-xs tracking-widest sm:tracking-ultra-wide uppercase font-semibold text-[var(--accent)] shadow-xl animate-fadeIn">
-              <Sparkles className="w-3.5 h-3.5 shrink-0 text-[var(--accent)]" />
+              <Award className="w-3.5 h-3.5 shrink-0 text-[var(--accent)]" />
               <span>Haute Bridal & Celebrity Artistry</span>
             </div>
 
@@ -206,13 +198,6 @@ export default async function HomePage() {
                 key={svc.id}
                 className="group relative flex flex-col justify-between rounded-2xl bg-[var(--card)] border border-[var(--border)] overflow-hidden p-6 sm:p-8 transition-all duration-300 hover:shadow-xl hover:border-[var(--accent)]/60"
               >
-                {/* Decorative Vector Watermark in Card Background */}
-                <div className="absolute -top-3 -right-3 opacity-25 group-hover:opacity-45 transition-opacity pointer-events-none">
-                  {idx === 0 && <LipstickVector className="w-16 h-16" />}
-                  {idx === 1 && <MakeupBrushVector className="w-16 h-16" />}
-                  {idx >= 2 && <SerumDropperVector className="w-16 h-16" />}
-                </div>
-
                 <div className="space-y-4 relative z-10">
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] tracking-ultra-wide uppercase font-semibold text-[var(--accent)]">

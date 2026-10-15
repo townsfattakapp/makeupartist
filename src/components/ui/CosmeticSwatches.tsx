@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Sparkles, Palette, Check, ArrowUpRight } from 'lucide-react';
+import { Palette, Check, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
 
 interface Swatch {
