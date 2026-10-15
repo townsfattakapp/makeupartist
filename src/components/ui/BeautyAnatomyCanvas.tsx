@@ -135,15 +135,21 @@ export function BeautyAnatomyCanvas() {
           {/* LEFT: Face Chart Canvas with Glowing Interactive Vector Hotspots */}
           <div className="lg:col-span-7 flex flex-col justify-between space-y-4">
             <div className="relative w-full aspect-[5/6] sm:aspect-square bg-[var(--card)] rounded-2xl sm:rounded-3xl border border-[var(--border)] p-4 sm:p-8 shadow-xl overflow-hidden flex flex-col justify-between">
-              {/* Corner Editorial Label */}
-              <div className="flex items-center justify-between border-b border-[var(--border)] pb-3 z-10 gap-2">
-                <span className="text-[9px] sm:text-xs tracking-wider sm:tracking-ultra-wide uppercase text-[var(--muted)] font-mono truncate">
-                  Kumkum Patel Atelier / Specimen #01
-                </span>
+              {/* Luxury Editorial Header Bar */}
+              <div className="flex flex-wrap items-center justify-between border-b border-[var(--border)] pb-3 z-10 gap-2">
+                <div className="flex items-center space-x-2">
+                  <span className="w-2 h-2 rounded-full bg-[var(--accent)] shadow-xs shadow-[var(--accent)]" />
+                  <span className="font-serif text-sm sm:text-base tracking-wide text-[var(--foreground)] font-medium">
+                    Kumkum Patel <span className="italic font-light text-[var(--accent)]">Face Chart</span>
+                  </span>
+                  <span className="text-[11px] tracking-wide text-[var(--muted)] hidden sm:inline">
+                    • Haute Bridal Architecture
+                  </span>
+                </div>
 
-                <div className="text-[9px] sm:text-xs tracking-widest uppercase text-[var(--accent)] font-semibold flex items-center space-x-1.5 shrink-0">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>Interactive Map</span>
+                <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[var(--accent-light)] border border-[var(--accent)]/30 text-[10px] sm:text-[11px] tracking-wider uppercase text-[var(--accent)] font-semibold shadow-xs">
+                  <Sparkles className="w-3 h-3 text-[var(--accent)]" />
+                  <span>Interactive Anatomy</span>
                 </div>
               </div>
 
@@ -190,24 +196,30 @@ export function BeautyAnatomyCanvas() {
               </div>
 
               {/* Bottom Instructions strip */}
-              <div className="text-center text-[11px] text-[var(--muted)] bg-[var(--background)]/85 backdrop-blur-xs py-2 px-4 rounded-xl border border-[var(--border)]">
-                Click any gold hotspot (+) on the facial map to inspect Kumkum’s technique & formulas
+              <div className="text-center text-[10px] sm:text-[11px] text-[var(--muted)] bg-[var(--background)]/90 backdrop-blur-xs py-2 px-4 rounded-full border border-[var(--border)] shadow-xs mx-auto max-w-md">
+                Select any gold point (+) to inspect Kumkum’s bespoke brushwork & formulations
               </div>
             </div>
 
-            {/* Quick-Select Zone Pills */}
-            <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
-              {BEAUTY_HOTSPOTS.map((spot) => (
+            {/* Quick-Select Feature Pills */}
+            <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 pt-2">
+              {[
+                { id: 'brows', label: 'Feathered Brows' },
+                { id: 'eyes', label: 'Eyes & Lashes' },
+                { id: 'cheeks', label: 'Cheekbone Glow' },
+                { id: 'complexion', label: 'Glass Skin Prep' },
+                { id: 'lips', label: 'Velvet Lips' },
+              ].map((feature) => (
                 <button
-                  key={spot.id}
-                  onClick={() => setActiveId(spot.id)}
-                  className={`px-4 py-1.5 rounded-full text-xs transition-all font-medium ${
-                    activeId === spot.id
-                      ? 'bg-[var(--foreground)] text-[var(--background)] shadow-sm'
+                  key={feature.id}
+                  onClick={() => setActiveId(feature.id)}
+                  className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs transition-all font-medium cursor-pointer ${
+                    activeId === feature.id
+                      ? 'bg-[var(--foreground)] text-[var(--background)] shadow-xs scale-102 font-semibold'
                       : 'bg-[var(--card)] text-[var(--muted)] hover:text-[var(--foreground)] border border-[var(--border)]'
                   }`}
                 >
-                  {spot.name.split(' ')[0]}
+                  {feature.label}
                 </button>
               ))}
             </div>
