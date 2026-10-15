@@ -1,13 +1,16 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowUpRight, Sparkles, Star, Award, ShieldCheck, HeartHandshake, Compass } from 'lucide-react';
+import { ArrowUpRight, Sparkles, Star, Award, ShieldCheck, HeartHandshake, Compass, Palette, Droplets } from 'lucide-react';
 import { repository } from '@/lib/db/repository';
 import { Header } from '@/components/ui/Header';
 import { Footer } from '@/components/ui/Footer';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { LookCard } from '@/components/ui/LookCard';
-import { BeforeAfterSlider } from '@/components/ui/BeforeAfterSlider';
 import { InstagramSection } from '@/components/ui/InstagramSection';
+import { TransformationSpotlight } from '@/components/ui/TransformationSpotlight';
+import { VanityKitShowcase } from '@/components/ui/VanityKitShowcase';
+import { AestheticQuiz } from '@/components/ui/AestheticQuiz';
+import { CosmeticSwatches } from '@/components/ui/CosmeticSwatches';
 
 export default async function HomePage() {
   const settings = await repository.getSettings();
@@ -21,9 +24,9 @@ export default async function HomePage() {
       <Header />
 
       <main className="flex-1">
-        {/* HERO SECTION */}
-        <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-20">
-          {/* Background Video / Asset */}
+        {/* HERO SECTION WITH LUXURY MAKEUP ARTISTRY IMMERSION */}
+        <section className="relative min-h-[94vh] flex items-center justify-center overflow-hidden pt-20">
+          {/* Background Video / Beauty Reel */}
           <div className="absolute inset-0 z-0">
             <video
               src={settings.heroVideoUrl || '/assets/41c5de68208bb185bacd72f4f3fa8965_720w.mp4'}
@@ -31,27 +34,27 @@ export default async function HomePage() {
               muted
               loop
               playsInline
-              className="w-full h-full object-cover filter brightness-[0.72] contrast-[1.08] dark:brightness-[0.55]"
+              className="w-full h-full object-cover filter brightness-[0.70] contrast-[1.10] dark:brightness-[0.52]"
             />
-            {/* Cinematic Gradient Vignette */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-black/40 to-black/70" />
-            <div className="absolute inset-0 bg-radial-at-c from-transparent via-black/30 to-black/80" />
+            {/* Soft Editorial Vignette & Warm Tint */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-black/45 to-black/75" />
+            <div className="absolute inset-0 bg-radial-at-c from-transparent via-black/35 to-black/80" />
           </div>
 
-          {/* Hero Content */}
+          {/* Hero Beauty Content */}
           <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 text-center text-white py-16 space-y-6">
-            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[11px] tracking-ultra-wide uppercase font-medium text-[var(--accent)] animate-fadeIn">
+            <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[11px] tracking-ultra-wide uppercase font-semibold text-[var(--accent)] animate-fadeIn">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Haute Bridal & Editorial Artistry</span>
+              <span>Haute Bridal & Celebrity Makeup Artistry</span>
             </div>
 
             <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[1.05] font-normal drop-shadow-md">
-              Timeless Radiance, <br />
+              Glass Skin Radiance, <br />
               <span className="italic font-light text-[var(--accent)]">Quietly Perfected.</span>
             </h1>
 
-            <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-white/80 font-light leading-relaxed tracking-wide">
-              Bespoke glass skin architecture, tailored contouring, and devoted bridal accompaniment across London, the Cotswolds, and European destinations.
+            <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-white/85 font-light leading-relaxed tracking-wide">
+              Bespoke facial architecture, custom hand-blended pigments, and dedicated wedding day accompaniment across Mayfair, the Cotswolds, and European destinations.
             </p>
 
             {/* Primary Actions */}
@@ -61,7 +64,7 @@ export default async function HomePage() {
                 id="hero-portfolio-btn"
                 className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-3.5 rounded-full bg-white text-black hover:bg-[var(--accent)] transition-all duration-300 text-xs tracking-luxury uppercase font-semibold shadow-lg hover:shadow-2xl cursor-pointer group"
               >
-                <span>Explore The Portfolio</span>
+                <span>Explore The Artistry Archive</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
 
@@ -70,68 +73,58 @@ export default async function HomePage() {
                 id="hero-enquire-btn"
                 className="w-full sm:w-auto inline-flex items-center justify-center space-x-2 px-8 py-3.5 rounded-full bg-transparent border border-white/40 text-white hover:bg-white/15 hover:border-white transition-all duration-300 text-xs tracking-luxury uppercase font-medium backdrop-blur-xs cursor-pointer"
               >
-                <span>Check Availability</span>
+                <span>Check Date Availability</span>
               </Link>
             </div>
 
-            {/* Positioning Highlights */}
-            <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-xs tracking-luxury uppercase text-white/70 border-t border-white/15 max-w-4xl mx-auto">
-              <div>London Mayfair & Chelsea</div>
-              <div>The Cotswolds & Oxfordshire</div>
-              <div>Paris & French Riviera</div>
-              <div>Lake Como & Destination Weddings</div>
-            </div>
-          </div>
-        </section>
-
-        {/* ARTISTIC PHILOSOPHY & METRICS STRIP */}
-        <section className="py-16 border-b border-[var(--border)] bg-[var(--background-subtle)]">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="flex items-start space-x-4 p-4 rounded-xl bg-[var(--card)] border border-[var(--border)] shadow-xs">
-                <div className="w-10 h-10 rounded-full bg-[var(--accent-light)] text-[var(--accent)] flex items-center justify-center shrink-0">
-                  <Sparkles className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="font-serif text-lg text-[var(--foreground)] font-medium">Bespoke Skin Architecture</h3>
-                  <p className="text-xs text-[var(--muted)] leading-relaxed mt-1">
-                    Every session begins with microcurrent lymphatic drainage and custom botanical hydration, ensuring weightless, cake-free longevity.
-                  </p>
-                </div>
+            {/* Tactile Makeup Highlights Strip */}
+            <div className="pt-10 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs tracking-luxury uppercase text-white/80 border-t border-white/15 max-w-4xl mx-auto font-medium">
+              <div className="flex items-center justify-center space-x-1.5">
+                <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
+                <span>45-Min Lymphatic Prep</span>
               </div>
-
-              <div className="flex items-start space-x-4 p-4 rounded-xl bg-[var(--card)] border border-[var(--border)] shadow-xs">
-                <div className="w-10 h-10 rounded-full bg-[var(--accent-light)] text-[var(--accent)] flex items-center justify-center shrink-0">
-                  <Award className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="font-serif text-lg text-[var(--foreground)] font-medium">8K Cinema & Paparazzi Proof</h3>
-                  <p className="text-xs text-[var(--muted)] leading-relaxed mt-1">
-                    Formulas calibrated specifically for modern high-definition optics and flash photography without flashback or chalky oxidation.
-                  </p>
-                </div>
+              <div className="flex items-center justify-center space-x-1.5">
+                <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
+                <span>16-Hour Tear-Proof Finish</span>
               </div>
-
-              <div className="flex items-start space-x-4 p-4 rounded-xl bg-[var(--card)] border border-[var(--border)] shadow-xs">
-                <div className="w-10 h-10 rounded-full bg-[var(--accent-light)] text-[var(--accent)] flex items-center justify-center shrink-0">
-                  <Compass className="w-5 h-5" />
-                </div>
-                <div>
-                  <h3 className="font-serif text-lg text-[var(--foreground)] font-medium">Single-Client Dedication</h3>
-                  <p className="text-xs text-[var(--muted)] leading-relaxed mt-1">
-                    Aurelia accepts only one high-profile bridal or editorial commission per day, giving you calm, uninterrupted concierge focus.
-                  </p>
-                </div>
+              <div className="flex items-center justify-center space-x-1.5">
+                <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
+                <span>Prestige Clean Kit</span>
+              </div>
+              <div className="flex items-center justify-center space-x-1.5">
+                <span className="w-2 h-2 rounded-full bg-[var(--accent)]" />
+                <span>Single Client Dedication</span>
               </div>
             </div>
           </div>
         </section>
 
-        {/* SELECTED PORTFOLIO LOOKS */}
+        {/* PROMINENT BEFORE / AFTER TRANSFORMATION SPOTLIGHT */}
+        <TransformationSpotlight />
+
+        {/* INTERACTIVE BRIDAL & EVENT AESTHETIC QUIZ */}
+        <section className="py-24 max-w-7xl mx-auto px-6 sm:px-8">
+          <SectionHeading
+            badge="The Aesthetic Matcher"
+            title="Discover Your Signature Bridal Style"
+            subtitle="Take our 60-second interactive consultation to match your wedding gown silhouette, venue lighting, and personal comfort level with a tailored makeup architecture."
+            centered
+            className="mb-12"
+          />
+
+          <AestheticQuiz />
+        </section>
+
+        {/* THE COUTURE COLOR BAR (SWATCHES & FORMULATION DETAILS) */}
+        <section className="py-16 max-w-7xl mx-auto px-6 sm:px-8">
+          <CosmeticSwatches />
+        </section>
+
+        {/* CURATED PORTFOLIO ARCHIVES */}
         <section className="py-24 max-w-7xl mx-auto px-6 sm:px-8">
           <SectionHeading
             badge="Artistry Archive"
-            title="Curated Editorial & Bridal Looks"
+            title="Featured Editorial & Bridal Looks"
             subtitle="Explore distinctive finishes honoring diverse skin tones, from dew-drenched glass skin to sculptured velvet matte."
             actionText="View Complete Portfolio"
             actionHref="/portfolio"
@@ -145,55 +138,8 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* INTERACTIVE BEFORE & AFTER TRANSFORMATION SPOTLIGHT */}
-        <section className="py-20 bg-[var(--background-subtle)] border-y border-[var(--border)]">
-          <div className="max-w-7xl mx-auto px-6 sm:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              <div className="lg:col-span-5 space-y-6">
-                <span className="text-[11px] tracking-ultra-wide uppercase font-semibold text-[var(--accent)]">
-                  The Transformation Proof
-                </span>
-                <h2 className="font-serif text-3xl sm:text-4xl text-[var(--foreground)] leading-tight">
-                  Skin First. <br />
-                  <span className="italic text-[var(--accent)]">Flawless Always.</span>
-                </h2>
-                <p className="text-sm text-[var(--muted)] leading-relaxed">
-                  Notice how real texture is preserved while redness and fatigue vanish. By preparing the canvas with microcurrent lymphatic drainage and tone-balancing serums, minimal foundation is required — leaving you radiant in daylight and mesmerising under evening chandeliers.
-                </p>
-
-                <div className="space-y-3 pt-2 text-xs text-[var(--muted)]">
-                  <div className="flex items-center space-x-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-                    <span>Consented client photography — authentic skin demonstration.</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Sparkles className="w-4 h-4 text-[var(--accent)] shrink-0" />
-                    <span>Zero skin-blur filters or artificial digital retouching.</span>
-                  </div>
-                </div>
-
-                <div className="pt-4">
-                  <Link
-                    href="/portfolio/mayfair-glass-skin-bride"
-                    className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-[var(--foreground)] text-[var(--background)] hover:bg-[var(--accent)] hover:text-black text-xs tracking-luxury uppercase font-medium transition-colors"
-                  >
-                    <span>Inspect Full Technique Breakdown</span>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </div>
-
-              <div className="lg:col-span-7">
-                <BeforeAfterSlider
-                  beforeImage="/assets/ff293627f3f413d12a8f47c2a4f6a519.jpg"
-                  afterImage="/assets/8cefb0245c79153f745fc34d21844435.jpg"
-                  beforeLabel="Natural Skin Prep"
-                  afterLabel="Finished Glass Glow"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* INSIDE THE LUXURY VANITY KIT (BRANDS & HYGIENE) */}
+        <VanityKitShowcase />
 
         {/* SIGNATURE SERVICES & EXPERIENCES */}
         <section className="py-24 max-w-7xl mx-auto px-6 sm:px-8">
@@ -262,7 +208,7 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* ARTIST STORY & EDITORIAL BIO */}
+        {/* ARTIST STORY & BACKSTAGE MANIFESTO */}
         <section className="py-20 bg-[var(--background-subtle)] border-t border-[var(--border)]">
           <div className="max-w-7xl mx-auto px-6 sm:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -286,29 +232,29 @@ export default async function HomePage() {
 
               <div className="lg:col-span-7 space-y-6">
                 <span className="text-[11px] tracking-ultra-wide uppercase font-semibold text-[var(--accent)]">
-                  The Artist
+                  The Artist Behind The Brush
                 </span>
                 <h2 className="font-serif text-3xl sm:text-5xl text-[var(--foreground)] leading-tight">
                   “Makeup should feel like liquid silk, not a theatrical mask.”
                 </h2>
                 <div className="space-y-4 text-sm text-[var(--muted)] leading-relaxed">
                   <p>
-                    Trained in classical fine art before mastering backstage couture at Paris and London fashion weeks, Aurelia Vance brings an architect’s understanding of facial symmetry and a painter’s sensitivity to light.
+                    Trained in classical portrait painting at the Courtauld Institute before mastering backstage couture at Paris and London fashion weeks, Aurelia Vance brings an architect’s understanding of facial symmetry and a painter’s sensitivity to light.
                   </p>
                   <p>
-                    Rather than imposing a signature template onto every face, Aurelia listens attentively to your personal aesthetic, wedding gown silhouette, and the venue’s ambient illumination to design a bespoke look that feels authentically you.
+                    Rather than imposing a signature template onto every face, Aurelia listens attentively to your personal aesthetic, wedding gown neckline, and the venue’s ambient illumination to design a bespoke look that feels authentically and effortlessly you.
                   </p>
                 </div>
 
-                <div className="pt-2 flex flex-wrap gap-4 text-xs tracking-wide">
+                <div className="pt-2 flex flex-wrap gap-3 text-xs tracking-wide">
                   <div className="px-3.5 py-2 rounded-lg bg-[var(--card)] border border-[var(--border)]">
-                    Cruelty-Free & Dermatological Kit
+                    Cruelty-Free & Hypoallergenic Kit
                   </div>
                   <div className="px-3.5 py-2 rounded-lg bg-[var(--card)] border border-[var(--border)]">
                     Multi-Day Destination Logistics
                   </div>
                   <div className="px-3.5 py-2 rounded-lg bg-[var(--card)] border border-[var(--border)]">
-                    Private Mayfair Preview Studio
+                    Private Mayfair Preview Atelier
                   </div>
                 </div>
 
